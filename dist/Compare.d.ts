@@ -5,6 +5,7 @@
 import type from './type';
 import IComparable from './IComparable';
 import CompareResult from './CompareResult';
+export { type };
 /**
  * Used for special comparison including NaN.
  * @param a

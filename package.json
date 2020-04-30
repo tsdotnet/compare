@@ -4,9 +4,9 @@
   "description": "Utility for common comparison functions including type reflection.",
   "author": "electricessence",
   "license": "MIT",
-  "types": "dist/index.d.ts",
-  "main": "dist/index.js",
-  "module": "dist-esm/index.js",
+  "types": "dist/compare.d.ts",
+  "main": "dist/compare.js",
+  "module": "dist-esm/compare.js",
   "keywords": [],
   "scripts": {
     "clean": "rimraf dist/* && rimraf dist-esm/*",

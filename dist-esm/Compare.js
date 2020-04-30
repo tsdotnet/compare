@@ -5,6 +5,7 @@
 import type from './type';
 var isTrueNaN = type.isTrueNaN;
 const VOID0 = void 0;
+export { type };
 /**
  * Used for special comparison including NaN.
  * @param a
@@ -76,4 +77,4 @@ export function areEquivalent(a, b, nullEquivalency = true, extraDepth = 0) {
     }
     return false;
 }
-//# sourceMappingURL=Compare.js.map
+//# sourceMappingURL=compare.js.map

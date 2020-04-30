@@ -10,6 +10,8 @@ import isTrueNaN = type.isTrueNaN;
 
 const VOID0: undefined = void 0;
 
+export {type};
+
 /**
  * Used for special comparison including NaN.
  * @param a
