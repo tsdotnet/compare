@@ -4,8 +4,9 @@
  * Licensing: MIT
  */
 
-export default interface ComparableObject<T> {
-	compareTo(other: T): number;
+export default interface ComparableObject<T>
+{
+	compareTo (other: T): number;
 }
 
 export declare type Comparable = string | number | boolean | ComparableObject<any>;

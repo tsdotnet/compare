@@ -4,6 +4,7 @@
  * Licensing: MIT
  */
 
-export default interface Comparer<T> {
-	compare(a: T, b: T): number;
+export default interface Comparer<T>
+{
+	compare (a: T, b: T): number;
 }
