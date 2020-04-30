@@ -1,7 +1,7 @@
 {
   "name": "@tsdotnet/compare",
   "version": "1.0.1",
-  "description": "",
+  "description": "Utility for common comparison functions including type reflection.",
   "author": "electricessence",
   "license": "MIT",
   "types": "dist/index.d.ts",
