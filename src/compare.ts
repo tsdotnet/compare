@@ -4,13 +4,14 @@
  */
 
 import type from './type';
-import IComparable from './Comparable';
+import Comparable from './Comparable';
 import CompareResult from './CompareResult';
+import {Comparison, EqualityComparison} from './Comparison';
 import isTrueNaN = type.isTrueNaN;
 
 const VOID0: undefined = void 0;
 
-export {type};
+export {type, Comparable, CompareResult, Comparison, EqualityComparison};
 
 /**
  * Used for special comparison including NaN.
@@ -31,7 +32,7 @@ const COMPARE_TO = 'compareTo';
  * @param a
  * @param b
  */
-export function compare<T> (a: IComparable<T>, b: IComparable<T>): number;
+export function compare<T> (a: Comparable<T>, b: Comparable<T>): number;
 export function compare<T extends type.Primitive> (a: T, b: T, strict?: boolean): CompareResult;
 export function compare (a: any, b: any, strict: boolean = true): CompareResult
 {
