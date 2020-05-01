@@ -4,7 +4,7 @@
  */
 
 import type from './type';
-import IComparable from './IComparable';
+import IComparable from './Comparable';
 import CompareResult from './CompareResult';
 import isTrueNaN = type.isTrueNaN;
 

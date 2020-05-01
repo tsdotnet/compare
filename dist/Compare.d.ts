@@ -3,7 +3,7 @@
  * Licensing: MIT
  */
 import type from './type';
-import IComparable from './IComparable';
+import IComparable from './Comparable';
 import CompareResult from './CompareResult';
 export { type };
 /**
