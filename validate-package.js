@@ -8,7 +8,7 @@ for(const key of ['types', 'main', 'module'])
 	if(!path)
 		console.error('Required value "' + key + '" not found.');
 	else if(!fs.existsSync(path))
-		console.error('"' + key + '": "' + path + '" not found.');
+		console.error('File "' + key + '": "' + path + '" not found.');
 	else continue;
 	fail = 1;
 }
