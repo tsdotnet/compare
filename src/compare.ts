@@ -6,12 +6,9 @@
 import type from './type';
 import Comparable from './Comparable';
 import CompareResult from './CompareResult';
-import {Comparison, EqualityComparison} from './Comparison';
 import isTrueNaN = type.isTrueNaN;
 
 const VOID0: undefined = void 0;
-
-export {type, Comparable, CompareResult, Comparison, EqualityComparison};
 
 /**
  * Used for special comparison including NaN.

@@ -1,12 +1,12 @@
 {
   "name": "@tsdotnet/compare",
   "version": "1.0.6",
-  "description": "Utility for common comparison functions including type reflection.",
+  "description": "Utility for common comparison functions including sorting and type reflection.",
   "author": "electricessence",
   "license": "MIT",
-  "types": "dist/compare.d.ts",
-  "main": "dist/compare.js",
-  "module": "dist-esm/compare.js",
+  "types": "dist/index.d.ts",
+  "main": "dist/index.js",
+  "module": "dist-esm/index.js",
   "keywords": [],
   "scripts": {
     "clean": "rimraf dist/* && rimraf dist-esm/*",

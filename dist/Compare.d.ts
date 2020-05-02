@@ -5,8 +5,6 @@
 import type from './type';
 import Comparable from './Comparable';
 import CompareResult from './CompareResult';
-import { Comparison, EqualityComparison } from './Comparison';
-export { type, Comparable, CompareResult, Comparison, EqualityComparison };
 /**
  * Used for special comparison including NaN.
  * @param a

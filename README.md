@@ -4,4 +4,4 @@
 ![npm-publish](https://github.com/tsdotnet/compare/workflows/npm-publish/badge.svg)
 [![npm version](https://img.shields.io/npm/v/@tsdotnet/compare.svg?style=flat-square)](https://www.npmjs.com/package/@tsdotnet/compare)
 
-Utility for common comparison functions including type reflection.
+Utility for common comparison functions including sorting and type reflection.
