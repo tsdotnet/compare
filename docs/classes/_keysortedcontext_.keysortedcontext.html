@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>KeySortedContext | @tsdotnet/compare - v1.0.12</title>
-	<meta name="description" content="Documentation for @tsdotnet/compare - v1.0.12">
+	<title>KeySortedContext | @tsdotnet/compare - v1.0.13</title>
+	<meta name="description" content="Documentation for @tsdotnet/compare - v1.0.13">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
 </head>
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">@tsdotnet/compare - v1.0.12</a>
+					<a href="../index.html" class="title">@tsdotnet/compare - v1.0.13</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -65,6 +65,13 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>A class for helping in complex sorting patterns using a key selector.</p>
+					</div>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-type-parameters">
 				<h3>Type parameters</h3>
 				<ul class="tsd-type-parameters">
@@ -136,29 +143,54 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Key<wbr>Sorted<wbr>Context<span class="tsd-signature-symbol">(</span>next<span class="tsd-signature-symbol">: </span><a href="../interfaces/_comparer_d_.comparer.html" class="tsd-signature-type">Comparer</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span>, _keySelector<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Selector</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">TKey</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span>, order<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Order</span>, comparer<span class="tsd-signature-symbol">?: </span><a href="../interfaces/_comparison_d_.comparison.html" class="tsd-signature-type">Comparison</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_keysortedcontext_.keysortedcontext.html" class="tsd-signature-type">KeySortedContext</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Key<wbr>Sorted<wbr>Context<span class="tsd-signature-symbol">(</span>next<span class="tsd-signature-symbol">: </span><a href="../interfaces/_comparer_d_.comparer.html" class="tsd-signature-type">Comparer</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span>, keySelector<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Selector</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">TKey</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span>, order<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Order</span>, comparer<span class="tsd-signature-symbol">?: </span><a href="../interfaces/_comparison_d_.comparison.html" class="tsd-signature-type">Comparison</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_keysortedcontext_.keysortedcontext.html" class="tsd-signature-type">KeySortedContext</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_sortcontext_.sortcontext.html">SortContext</a>.<a href="_sortcontext_.sortcontext.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/tsdotnet/compare/blob/8179a78/src/KeySortedContext.ts#L19">KeySortedContext.ts:19</a></li>
+									<li>Defined in <a href="https://github.com/tsdotnet/compare/blob/204c998/src/KeySortedContext.ts#L20">KeySortedContext.ts:20</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Constructs a KeySortedContext.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>next: <a href="../interfaces/_comparer_d_.comparer.html" class="tsd-signature-type">Comparer</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>If provided (not null) any items that are considered equal will use this comparer to decided their order.</p>
+										</div>
+									</div>
 								</li>
 								<li>
-									<h5>_keySelector: <span class="tsd-signature-type">Selector</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">TKey</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
+									<h5>keySelector: <span class="tsd-signature-type">Selector</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">TKey</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>If provided (not null) will use the selected keys to order the results.</p>
+										</div>
+									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> order: <span class="tsd-signature-type">Order</span><span class="tsd-signature-symbol"> = Order.Ascending</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>Ascending or Descending.</p>
+										</div>
+									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> comparer: <a href="../interfaces/_comparison_d_.comparison.html" class="tsd-signature-type">Comparison</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = compare</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>The comparison function.  The default handles most cases.</p>
+										</div>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_keysortedcontext_.keysortedcontext.html" class="tsd-signature-type">KeySortedContext</a></h4>
@@ -175,9 +207,14 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_sortcontext_.sortcontext.html">SortContext</a>.<a href="_sortcontext_.sortcontext.html#_comparer">_comparer</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/tsdotnet/compare/blob/8179a78/src/SortContext.ts#L16">SortContext.ts:16</a></li>
+							<li>Defined in <a href="https://github.com/tsdotnet/compare/blob/204c998/src/SortContext.ts#L24">SortContext.ts:24</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The comparison function that will differentiate between items.</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected">
 					<a name="_keyselector" class="tsd-anchor"></a>
@@ -185,7 +222,7 @@
 					<div class="tsd-signature tsd-kind-icon">_key<wbr>Selector<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Selector</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">TKey</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/tsdotnet/compare/blob/8179a78/src/KeySortedContext.ts#L22">KeySortedContext.ts:22</a></li>
+							<li>Defined in <a href="https://github.com/tsdotnet/compare/blob/204c998/src/KeySortedContext.ts#L20">KeySortedContext.ts:20</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -196,9 +233,14 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_sortcontext_.sortcontext.html">SortContext</a>.<a href="_sortcontext_.sortcontext.html#_next">_next</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/tsdotnet/compare/blob/8179a78/src/SortContext.ts#L15">SortContext.ts:15</a></li>
+							<li>Defined in <a href="https://github.com/tsdotnet/compare/blob/204c998/src/SortContext.ts#L23">SortContext.ts:23</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>If provided (not null) any items that are considered equal will use this comparer to decided their order.</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
 					<a name="_order" class="tsd-anchor"></a>
@@ -207,9 +249,14 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_sortcontext_.sortcontext.html">SortContext</a>.<a href="_sortcontext_.sortcontext.html#_order">_order</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/tsdotnet/compare/blob/8179a78/src/SortContext.ts#L17">SortContext.ts:17</a></li>
+							<li>Defined in <a href="https://github.com/tsdotnet/compare/blob/204c998/src/SortContext.ts#L25">SortContext.ts:25</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Ascending or Descending.</p>
+						</div>
+					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
@@ -225,7 +272,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_sortcontext_.sortcontext.html">SortContext</a>.<a href="_sortcontext_.sortcontext.html#order">order</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/tsdotnet/compare/blob/8179a78/src/SortContext.ts#L25">SortContext.ts:25</a></li>
+									<li>Defined in <a href="https://github.com/tsdotnet/compare/blob/204c998/src/SortContext.ts#L33">SortContext.ts:33</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -252,7 +299,7 @@
 								<p>Implementation of <a href="../interfaces/_comparer_d_.comparer.html">Comparer</a>.<a href="../interfaces/_comparer_d_.comparer.html#compare">compare</a></p>
 								<p>Overrides <a href="_sortcontext_.sortcontext.html">SortContext</a>.<a href="_sortcontext_.sortcontext.html#compare">compare</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/tsdotnet/compare/blob/8179a78/src/KeySortedContext.ts#L30">KeySortedContext.ts:30</a></li>
+									<li>Defined in <a href="https://github.com/tsdotnet/compare/blob/204c998/src/KeySortedContext.ts#L40">KeySortedContext.ts:40</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -279,7 +326,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_sortcontext_.sortcontext.html">SortContext</a>.<a href="_sortcontext_.sortcontext.html#generatesortedindexes">generateSortedIndexes</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/tsdotnet/compare/blob/8179a78/src/SortContext.ts#L35">SortContext.ts:35</a></li>
+									<li>Defined in <a href="https://github.com/tsdotnet/compare/blob/204c998/src/SortContext.ts#L43">SortContext.ts:43</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
