@@ -48,5 +48,16 @@ export default class SortContext {
             return this._next.compare(a, b);
         return this._order * d;
     }
+    /**
+     * A scope safe comparison function (delegate).
+     * @return {Comparison}
+     */
+    get comparison() {
+        if (this._comparison)
+            return this._comparison;
+        const c = (a, b) => this.compare(a, b);
+        this._comparison = c;
+        return c;
+    }
 }
 //# sourceMappingURL=SortContext.js.map

@@ -37,4 +37,10 @@ export default class SortContext<T> implements Comparer<T> {
      * @returns {any}
      */
     compare(a: T, b: T): number;
+    private _comparison;
+    /**
+     * A scope safe comparison function (delegate).
+     * @return {Comparison}
+     */
+    get comparison(): Comparison<T>;
 }

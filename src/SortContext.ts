@@ -60,4 +60,18 @@ export default class SortContext<T>
 		if(d===0 && this._next) return this._next.compare(a, b);
 		return this._order*d;
 	}
+
+	private _comparison: Comparison<T> | undefined;
+
+	/**
+	 * A scope safe comparison function (delegate).
+	 * @return {Comparison}
+	 */
+	get comparison (): Comparison<T>
+	{
+		if(this._comparison) return this._comparison;
+		const c = (a: T, b: T): number => this.compare(a, b);
+		this._comparison = c;
+		return c;
+	}
 }
