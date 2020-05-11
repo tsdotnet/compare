@@ -5,11 +5,20 @@
 import { Comparison } from './Comparison';
 import Order from './Order';
 import Comparer from './Comparer';
+/**
+ * A class for helping in complex sorting patterns.
+ */
 export default class SortContext<T> implements Comparer<T> {
     protected _next: Comparer<T> | null;
     protected _comparer: Comparison<T>;
     protected _order: Order;
-    constructor(_next: Comparer<T> | null, _comparer?: Comparison<T>, _order?: Order);
+    /**
+     * Constructs a SortContext.
+     * @param {Comparer | null} _next If provided (not null) any items that are considered equal will use this comparer to decided their order.
+     * @param {Comparison} _comparer The comparison function that will differentiate between items.
+     * @param {Order} _order Ascending or Descending.
+     */
+    constructor(_next: Comparer<T> | null, _comparer: Comparison<T>, _order?: Order);
     /**
      * Direction of the comparison.
      * @type {Order}

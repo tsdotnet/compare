@@ -2,9 +2,17 @@
  * @author electricessence / https://github.com/electricessence/
  * Licensing: MIT
  */
-import { compare } from './compare';
+/**
+ * A class for helping in complex sorting patterns.
+ */
 export default class SortContext {
-    constructor(_next, _comparer = compare, _order = 1 /* Ascending */) {
+    /**
+     * Constructs a SortContext.
+     * @param {Comparer | null} _next If provided (not null) any items that are considered equal will use this comparer to decided their order.
+     * @param {Comparison} _comparer The comparison function that will differentiate between items.
+     * @param {Order} _order Ascending or Descending.
+     */
+    constructor(_next, _comparer, _order = 1 /* Ascending */) {
         this._next = _next;
         this._comparer = _comparer;
         this._order = _order;
