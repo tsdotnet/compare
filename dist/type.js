@@ -4,7 +4,6 @@
  * Licensing: MIT
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-/* eslint-disable no-inner-declarations,@typescript-eslint/no-namespace */
 var type;
 (function (type_1) {
     /**

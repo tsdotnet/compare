@@ -3,14 +3,13 @@
  * Licensing: MIT
  */
 
-import {compare} from './compare';
+import {Selector} from '@tsdotnet/common-interfaces';
 import {Comparable} from './Comparable';
-import Comparer from './Comparer';
 import {Comparison} from './Comparison';
+import {compare} from './compare';
+import Comparer from './Comparer';
 import SortContext from './SortContext';
 import Order from './Order';
-
-type Selector<T, TKey> = (e: T) => TKey;
 
 function identity<T> (e: T): T { return e; }
 

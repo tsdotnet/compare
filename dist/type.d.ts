@@ -2,12 +2,9 @@
  * @author electricessence / https://github.com/electricessence/
  * Licensing: MIT
  */
-interface ArrayLikeWritable<T> {
-    length: number;
-    [n: number]: T;
-}
+import { ArrayLikeWritable, Primitive as P } from '@tsdotnet/common-interfaces';
 declare namespace type {
-    type Primitive = string | number | boolean;
+    type Primitive = P;
     type Literal = 'boolean' | 'number' | 'string' | 'symbol' | 'object' | 'undefined' | 'function';
     const enum Value {
         Boolean = "boolean",

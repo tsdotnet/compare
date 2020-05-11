@@ -2,7 +2,6 @@
  * @author electricessence / https://github.com/electricessence/
  * Licensing: MIT
  */
-/* eslint-disable no-inner-declarations,@typescript-eslint/no-namespace */
 var type;
 (function (type_1) {
     /**

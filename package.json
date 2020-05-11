@@ -59,5 +59,8 @@
     "ts-node": "^8.10.1",
     "typedoc": "^0.17.6",
     "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "@tsdotnet/common-interfaces": "^1.0.2"
   }
 }

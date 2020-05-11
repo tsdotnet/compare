@@ -3,19 +3,13 @@
  * Licensing: MIT
  */
 
-interface ArrayLikeWritable<T>
-{
-	length: number;
-
-	[n: number]: T;
-}
-
 /* eslint-disable no-inner-declarations,@typescript-eslint/no-namespace */
+
+import {ArrayLikeWritable, Primitive as P} from '@tsdotnet/common-interfaces';
 
 namespace type
 {
-
-	export type Primitive = string | number | boolean;
+	export type Primitive = P;
 
 	export type Literal =
 		'boolean'
