@@ -5,8 +5,8 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
-const type_1 = tslib_1.__importDefault(require("./type"));
 const comparePrimitives_1 = require("./comparePrimitives");
+const type_1 = tslib_1.__importDefault(require("./type"));
 const COMPARE_TO = 'compareTo';
 function compare(a, b, strict = true) {
     if (a && type_1.default.hasMember(a, COMPARE_TO))

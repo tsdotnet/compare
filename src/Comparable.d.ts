@@ -4,9 +4,32 @@
  * Licensing: MIT
  */
 
-export default interface ComparableObject<T>
+export interface ComparableObject<T>
 {
 	compareTo (other: T): number;
 }
 
 export declare type Comparable = string | number | boolean | ComparableObject<any>;
+
+export interface Comparer<T>
+{
+	compare (a: T, b: T): number;
+}
+
+export interface Comparison<T>
+{
+	(a: T, b: T): number;
+
+	(a: T, b: T, strict: boolean): number;
+
+	(a: T, b: T, strict?: boolean): number;
+}
+
+export interface EqualityComparison<T>
+{
+	(a: T, b: T): boolean;
+
+	(a: T, b: T, strict: boolean): boolean;
+
+	(a: T, b: T, strict?: boolean): boolean;
+}

@@ -1,18 +1,19 @@
-import type from './type';
-import Comparable from './Comparable';
-import CompareResult from './CompareResult';
-import {Comparison, EqualityComparison} from './Comparison';
-import Order from './Order';
-import SortContext from './SortContext';
-import KeySortedContext from './KeySortedContext';
 import {areEqual} from './areEqual';
 import {areEquivalent} from './areEquivalent';
-import {comparePrimitives, comparePrimitivesInverted} from './comparePrimitives';
+import areSequencesEqual from './areSequencesEqual';
+import {Comparable, Comparison, EqualityComparison} from './Comparable';
 import {compare, compareInverted} from './compare';
+import {comparePrimitives, comparePrimitivesInverted} from './comparePrimitives';
+import CompareResult from './CompareResult';
+import KeySortedContext from './KeySortedContext';
+import Order from './Order';
+import SortContext from './SortContext';
+import type from './type';
 
 export {
 	areEqual,
 	areEquivalent,
+	areSequencesEqual,
 	comparePrimitives,
 	comparePrimitivesInverted,
 	compare,

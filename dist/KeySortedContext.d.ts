@@ -3,11 +3,9 @@
  * Licensing: MIT
  */
 import { Selector } from '@tsdotnet/common-interfaces';
-import { Comparable } from './Comparable';
-import { Comparison } from './Comparison';
-import Comparer from './Comparer';
-import SortContext from './SortContext';
+import { Comparable, Comparer, Comparison } from './Comparable';
 import Order from './Order';
+import SortContext from './SortContext';
 /**
  * A class for helping in complex sorting patterns using a key selector.
  */

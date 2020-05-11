@@ -3,9 +3,8 @@
  * Licensing: MIT
  */
 
-import {Comparison} from './Comparison';
+import {Comparer, Comparison} from './Comparable';
 import Order from './Order';
-import Comparer from './Comparer';
 
 /**
  * A class for helping in complex sorting patterns.
@@ -35,6 +34,20 @@ export default class SortContext<T>
 		return this._order;
 	}
 
+	private _comparison: Comparison<T> | undefined;
+
+	/**
+	 * A scope safe comparison function (delegate).
+	 * @return {Comparison}
+	 */
+	get comparison (): Comparison<T>
+	{
+		if(this._comparison) return this._comparison;
+		const c = (a: T, b: T): number => this.compare(a, b);
+		this._comparison = c;
+		return c;
+	}
+
 	/**
 	 * Generates an array of indexes from the source in order of their expected internalSort without modifying the source.
 	 * @param source
@@ -59,19 +72,5 @@ export default class SortContext<T>
 		const d = this._comparer(a, b);
 		if(d===0 && this._next) return this._next.compare(a, b);
 		return this._order*d;
-	}
-
-	private _comparison: Comparison<T> | undefined;
-
-	/**
-	 * A scope safe comparison function (delegate).
-	 * @return {Comparison}
-	 */
-	get comparison (): Comparison<T>
-	{
-		if(this._comparison) return this._comparison;
-		const c = (a: T, b: T): number => this.compare(a, b);
-		this._comparison = c;
-		return c;
 	}
 }

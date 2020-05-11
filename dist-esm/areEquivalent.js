@@ -2,8 +2,8 @@
  * @author electricessence / https://github.com/electricessence/
  * Licensing: MIT
  */
-import type from './type';
 import { areEqual } from './areEqual';
+import type from './type';
 /**
  * Determines if two primitives are equal or if two objects have the same key/value combinations.
  * @param a
@@ -16,19 +16,18 @@ export function areEquivalent(a, b, nullEquivalency = true, extraDepth = 0) {
     // Take a step by step approach to ensure efficiency.
     if (areEqual(a, b, true))
         return true;
+    const aKeys = type.isObject(a) && Object.keys(a), bKeys = type.isObject(b) && Object.keys(b);
     if (a == null || b == null) {
         if (!nullEquivalency)
             return false;
-        if (type.isObject(a)) {
-            return !Object.keys(a).length;
-        }
-        if (type.isObject(b)) {
-            return !Object.keys(b).length;
-        }
+        if (aKeys)
+            return !aKeys.length;
+        if (bKeys)
+            return !bKeys.length;
         return a == null && b == null;
     }
-    if (type.isObject(a) && type.isObject(b)) {
-        const aKeys = Object.keys(a), bKeys = Object.keys(b), len = aKeys.length;
+    if (aKeys && bKeys) {
+        const len = aKeys.length;
         if (len !== bKeys.length)
             return false;
         aKeys.sort();

@@ -2,8 +2,8 @@
  * @author electricessence / https://github.com/electricessence/
  * Licensing: MIT
  */
-import type from './type';
 import { comparePrimitives } from './comparePrimitives';
+import type from './type';
 const COMPARE_TO = 'compareTo';
 export function compare(a, b, strict = true) {
     if (a && type.hasMember(a, COMPARE_TO))

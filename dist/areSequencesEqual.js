@@ -19,15 +19,15 @@ function areSequencesEqual(a, b, equalityComparer = index_1.areEqual) {
         && b instanceof Array
         && a.length != b.length)
         return false;
-    const e1 = a[Symbol.iterator](), e2 = b[Symbol.iterator]();
+    const aI = a[Symbol.iterator](), bI = b[Symbol.iterator]();
     // eslint-disable-next-line no-constant-condition
     while (true) {
-        const n1 = e1.next(), n2 = e2.next();
-        if (n1.done && n2.done)
+        const aN = aI.next(), bN = bI.next();
+        if (aN.done && bN.done)
             return true;
-        if (n1.done || n2.done)
+        if (aN.done || bN.done)
             return false;
-        if (!equalityComparer(n1.value, n2.value))
+        if (!equalityComparer(aN.value, bN.value))
             return false;
     }
 }

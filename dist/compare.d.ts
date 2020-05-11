@@ -2,9 +2,9 @@
  * @author electricessence / https://github.com/electricessence/
  * Licensing: MIT
  */
-import type from './type';
+import { ComparableObject } from './Comparable';
 import CompareResult from './CompareResult';
-import ComparableObject from './Comparable';
+import type from './type';
 /**
  * Compares two comparable objects or primitives.
  * @param a

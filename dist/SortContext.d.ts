@@ -2,9 +2,8 @@
  * @author electricessence / https://github.com/electricessence/
  * Licensing: MIT
  */
-import { Comparison } from './Comparison';
+import { Comparer, Comparison } from './Comparable';
 import Order from './Order';
-import Comparer from './Comparer';
 /**
  * A class for helping in complex sorting patterns.
  */
@@ -24,6 +23,12 @@ export default class SortContext<T> implements Comparer<T> {
      * @type {Order}
      */
     get order(): Order;
+    private _comparison;
+    /**
+     * A scope safe comparison function (delegate).
+     * @return {Comparison}
+     */
+    get comparison(): Comparison<T>;
     /**
      * Generates an array of indexes from the source in order of their expected internalSort without modifying the source.
      * @param source
@@ -37,10 +42,4 @@ export default class SortContext<T> implements Comparer<T> {
      * @returns {any}
      */
     compare(a: T, b: T): number;
-    private _comparison;
-    /**
-     * A scope safe comparison function (delegate).
-     * @return {Comparison}
-     */
-    get comparison(): Comparison<T>;
 }

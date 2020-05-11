@@ -4,12 +4,10 @@
  */
 
 import {Selector} from '@tsdotnet/common-interfaces';
-import {Comparable} from './Comparable';
-import {Comparison} from './Comparison';
+import {Comparable, Comparer, Comparison} from './Comparable';
 import {compare} from './compare';
-import Comparer from './Comparer';
-import SortContext from './SortContext';
 import Order from './Order';
+import SortContext from './SortContext';
 
 /**
  * A class for helping in complex sorting patterns using a key selector.

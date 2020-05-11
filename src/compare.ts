@@ -3,10 +3,10 @@
  * Licensing: MIT
  */
 
-import type from './type';
-import CompareResult from './CompareResult';
-import ComparableObject from './Comparable';
+import {ComparableObject} from './Comparable';
 import {comparePrimitives} from './comparePrimitives';
+import CompareResult from './CompareResult';
+import type from './type';
 
 const COMPARE_TO = 'compareTo';
 

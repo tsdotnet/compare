@@ -73,12 +73,6 @@ var type;
         return typeof value === "string" /* String */;
     }
     type_1.isString = isString;
-    /**
-     * Returns true if the value is a boolean, string, number, null, or undefined.
-     * @param value
-     * @param allowUndefined if set to true will return true if the value is undefined.
-     * @returns {boolean}
-     */
     function isPrimitive(value, allowUndefined = false) {
         const t = typeof value;
         switch (t) {
@@ -94,12 +88,6 @@ var type;
         return false;
     }
     type_1.isPrimitive = isPrimitive;
-    /**
-     * For detecting if the value can be used as a key.
-     * @param value
-     * @param allowUndefined
-     * @returns {boolean|boolean}
-     */
     function isPrimitiveOrSymbol(value, allowUndefined = false) {
         return typeof value === "symbol" /* Symbol */ ? true : isPrimitive(value, allowUndefined);
     }
@@ -129,12 +117,6 @@ var type;
         return typeof value === "function" /* Function */;
     }
     type_1.isFunction = isFunction;
-    /**
-     * Returns true if the value parameter is an object.
-     * @param value
-     * @param allowNull If false (default) null is not considered an object.
-     * @returns {boolean}
-     */
     function isObject(value, allowNull = false) {
         return typeof value === "object" /* Object */ && (allowNull || value !== null);
     }

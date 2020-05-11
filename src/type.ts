@@ -5,20 +5,11 @@
 
 /* eslint-disable no-inner-declarations,@typescript-eslint/no-namespace */
 
-import {ArrayLikeWritable, Primitive as P} from '@tsdotnet/common-interfaces';
+import {ArrayLikeWritable, NullablePrimitive, Primitive as P} from '@tsdotnet/common-interfaces';
 
 namespace type
 {
 	export type Primitive = P;
-
-	export type Literal =
-		'boolean'
-		| 'number'
-		| 'string'
-		| 'symbol'
-		| 'object'
-		| 'undefined'
-		| 'function';
 
 	export const enum Value
 	{
@@ -30,6 +21,30 @@ namespace type
 		Undefined = 'undefined',
 		Function  = 'function',
 	}
+
+	type Name<T> = T extends symbol
+		? Value.Symbol
+		: T extends string
+			? Value.String
+			: T extends number
+				? Value.Number
+				: T extends boolean
+					? Value.Boolean
+					: T extends undefined
+						? Value.Undefined
+						: T extends Function
+							? Value.Function
+							: Value.Object;
+
+	export type Literal =
+		Name<symbol>
+		| Name<string>
+		| Name<number>
+		| Name<boolean>
+		| Name<undefined>
+		| Name<Function>
+		| Name<object>;
+
 
 	/**
 	 * Returns true if the target matches the type (instanceof).
@@ -108,12 +123,26 @@ namespace type
 	}
 
 	/**
+	 * Returns true if the value is a boolean, string, number, or null.
+	 * @param value
+	 * @returns {boolean}
+	 */
+	export function isPrimitive (value: any): value is NullablePrimitive
+
+	/**
 	 * Returns true if the value is a boolean, string, number, null, or undefined.
 	 * @param value
 	 * @param allowUndefined if set to true will return true if the value is undefined.
 	 * @returns {boolean}
 	 */
-	export function isPrimitive (value: any, allowUndefined: boolean = false): value is Primitive
+	export function isPrimitive (value: any, allowUndefined: false): value is NullablePrimitive
+	export function isPrimitive (
+		value: any,
+		allowUndefined: boolean): value is NullablePrimitive | undefined
+
+	export function isPrimitive (
+		value: any,
+		allowUndefined: boolean = false): value is NullablePrimitive | undefined
 	{
 		const t = typeof value;
 		switch(t)
@@ -130,15 +159,30 @@ namespace type
 		return false;
 	}
 
+
+	/**
+	 * For detecting if the value can be used as a key.
+	 * @param value
+	 * @returns {boolean}
+	 */
+	export function isPrimitiveOrSymbol (value: any): value is NullablePrimitive | symbol
+
 	/**
 	 * For detecting if the value can be used as a key.
 	 * @param value
 	 * @param allowUndefined
-	 * @returns {boolean|boolean}
+	 * @returns {boolean}
 	 */
 	export function isPrimitiveOrSymbol (
 		value: any,
-		allowUndefined: boolean = false): value is Primitive | symbol
+		allowUndefined: false): value is NullablePrimitive | symbol
+	export function isPrimitiveOrSymbol (
+		value: any,
+		allowUndefined: boolean): value is NullablePrimitive | symbol | undefined
+
+	export function isPrimitiveOrSymbol (
+		value: any,
+		allowUndefined: boolean = false): value is NullablePrimitive | symbol | undefined
 	{
 		return typeof value===Value.Symbol ? true : isPrimitive(value, allowUndefined);
 	}
@@ -174,10 +218,19 @@ namespace type
 	/**
 	 * Returns true if the value parameter is an object.
 	 * @param value
+	 * @returns {boolean}
+	 */
+	export function isObject (value: any): value is object
+
+	/**
+	 * Returns true if the value parameter is an object.
+	 * @param value
 	 * @param allowNull If false (default) null is not considered an object.
 	 * @returns {boolean}
 	 */
-	export function isObject (value: any, allowNull: boolean = false): boolean
+	export function isObject (value: any, allowNull: false): value is object
+	export function isObject (value: any, allowNull: boolean): value is object | null
+	export function isObject (value: any, allowNull: boolean = false): value is object | null
 	{
 		return typeof value===Value.Object && (allowNull || value!==null);
 	}

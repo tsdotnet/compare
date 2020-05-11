@@ -5,8 +5,8 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
-const type_1 = tslib_1.__importDefault(require("./type"));
 const areEqual_1 = require("./areEqual");
+const type_1 = tslib_1.__importDefault(require("./type"));
 /**
  * Determines if two primitives are equal or if two objects have the same key/value combinations.
  * @param a
@@ -19,19 +19,18 @@ function areEquivalent(a, b, nullEquivalency = true, extraDepth = 0) {
     // Take a step by step approach to ensure efficiency.
     if (areEqual_1.areEqual(a, b, true))
         return true;
+    const aKeys = type_1.default.isObject(a) && Object.keys(a), bKeys = type_1.default.isObject(b) && Object.keys(b);
     if (a == null || b == null) {
         if (!nullEquivalency)
             return false;
-        if (type_1.default.isObject(a)) {
-            return !Object.keys(a).length;
-        }
-        if (type_1.default.isObject(b)) {
-            return !Object.keys(b).length;
-        }
+        if (aKeys)
+            return !aKeys.length;
+        if (bKeys)
+            return !bKeys.length;
         return a == null && b == null;
     }
-    if (type_1.default.isObject(a) && type_1.default.isObject(b)) {
-        const aKeys = Object.keys(a), bKeys = Object.keys(b), len = aKeys.length;
+    if (aKeys && bKeys) {
+        const len = aKeys.length;
         if (len !== bKeys.length)
             return false;
         aKeys.sort();

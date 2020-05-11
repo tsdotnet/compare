@@ -27,6 +27,17 @@ class SortContext {
         return this._order;
     }
     /**
+     * A scope safe comparison function (delegate).
+     * @return {Comparison}
+     */
+    get comparison() {
+        if (this._comparison)
+            return this._comparison;
+        const c = (a, b) => this.compare(a, b);
+        this._comparison = c;
+        return c;
+    }
+    /**
      * Generates an array of indexes from the source in order of their expected internalSort without modifying the source.
      * @param source
      * @returns {number[]}
@@ -49,17 +60,6 @@ class SortContext {
         if (d === 0 && this._next)
             return this._next.compare(a, b);
         return this._order * d;
-    }
-    /**
-     * A scope safe comparison function (delegate).
-     * @return {Comparison}
-     */
-    get comparison() {
-        if (this._comparison)
-            return this._comparison;
-        const c = (a, b) => this.compare(a, b);
-        this._comparison = c;
-        return c;
     }
 }
 exports.default = SortContext;
