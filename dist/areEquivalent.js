@@ -5,7 +5,7 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
-const areEqual_1 = require("./areEqual");
+const areEqual_1 = tslib_1.__importDefault(require("./areEqual"));
 const type_1 = tslib_1.__importDefault(require("./type"));
 /**
  * Determines if two primitives are equal or if two objects have the same key/value combinations.
@@ -17,7 +17,7 @@ const type_1 = tslib_1.__importDefault(require("./type"));
  */
 function areEquivalent(a, b, nullEquivalency = true, extraDepth = 0) {
     // Take a step by step approach to ensure efficiency.
-    if (areEqual_1.areEqual(a, b, true))
+    if (areEqual_1.default(a, b, true))
         return true;
     const aKeys = type_1.default.isObject(a) && Object.keys(a), bKeys = type_1.default.isObject(b) && Object.keys(b);
     if (a == null || b == null) {
@@ -37,7 +37,7 @@ function areEquivalent(a, b, nullEquivalency = true, extraDepth = 0) {
         bKeys.sort();
         for (let i = 0; i < len; i++) {
             const key = aKeys[i];
-            if (key !== bKeys[i] || !areEqual_1.areEqual(a[key], b[key], true))
+            if (key !== bKeys[i] || !areEqual_1.default(a[key], b[key], true))
                 return false;
         }
         // Doesn't track circular references but allows for controlling the amount of recursion.
@@ -51,5 +51,5 @@ function areEquivalent(a, b, nullEquivalency = true, extraDepth = 0) {
     }
     return false;
 }
-exports.areEquivalent = areEquivalent;
+exports.default = areEquivalent;
 //# sourceMappingURL=areEquivalent.js.map

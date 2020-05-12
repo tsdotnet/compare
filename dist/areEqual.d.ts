@@ -9,4 +9,4 @@
  * @param strict
  * @returns {boolean|any}
  */
-export declare function areEqual(a: any, b: any, strict?: boolean): boolean;
+export default function areEqual(a: any, b: any, strict?: boolean): boolean;

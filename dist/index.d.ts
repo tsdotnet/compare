@@ -1,5 +1,5 @@
-import { areEqual } from './areEqual';
-import { areEquivalent } from './areEquivalent';
+import areEqual from './areEqual';
+import areEquivalent from './areEquivalent';
 import areSequencesEqual from './areSequencesEqual';
 import { Comparable, Comparison, EqualityComparison } from './Comparable';
 import { compare, compareInverted } from './compare';

@@ -4,7 +4,8 @@
  * Licensing: MIT
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-const areEqual_1 = require("./areEqual");
+const tslib_1 = require("tslib");
+const areEqual_1 = tslib_1.__importDefault(require("./areEqual"));
 /**
  * Compares two comparable objects or primitives.
  * @param a
@@ -12,7 +13,7 @@ const areEqual_1 = require("./areEqual");
  * @param strict If true (default) will ensure strict identity (===).  False will allow equality (==).
  */
 function comparePrimitives(a, b, strict = true) {
-    if (areEqual_1.areEqual(a, b, strict))
+    if (areEqual_1.default(a, b, strict))
         return 0 /* Equal */;
     // Allow for special inequality..
     if (a > b || (strict && ((a === 0 && b == 0) || (a === null && b === undefined))))

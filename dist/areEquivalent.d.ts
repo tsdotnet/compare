@@ -10,4 +10,4 @@
  * @param extraDepth
  * @returns {boolean}
  */
-export declare function areEquivalent(a: any, b: any, nullEquivalency?: boolean, extraDepth?: number): boolean;
+export default function areEquivalent(a: any, b: any, nullEquivalency?: boolean, extraDepth?: number): boolean;

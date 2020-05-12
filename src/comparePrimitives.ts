@@ -3,7 +3,7 @@
  * Licensing: MIT
  */
 
-import {areEqual} from './areEqual';
+import areEqual from './areEqual';
 import CompareResult from './CompareResult';
 import type from './type';
 

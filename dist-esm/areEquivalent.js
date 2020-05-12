@@ -2,7 +2,7 @@
  * @author electricessence / https://github.com/electricessence/
  * Licensing: MIT
  */
-import { areEqual } from './areEqual';
+import areEqual from './areEqual';
 import type from './type';
 /**
  * Determines if two primitives are equal or if two objects have the same key/value combinations.
@@ -12,7 +12,7 @@ import type from './type';
  * @param extraDepth
  * @returns {boolean}
  */
-export function areEquivalent(a, b, nullEquivalency = true, extraDepth = 0) {
+export default function areEquivalent(a, b, nullEquivalency = true, extraDepth = 0) {
     // Take a step by step approach to ensure efficiency.
     if (areEqual(a, b, true))
         return true;

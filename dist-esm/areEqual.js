@@ -11,7 +11,7 @@ var isTrueNaN = type.isTrueNaN;
  * @param strict
  * @returns {boolean|any}
  */
-export function areEqual(a, b, strict = true) {
+export default function areEqual(a, b, strict = true) {
     return a === b || (!strict && a == b) || (isTrueNaN(a) && isTrueNaN(b));
 }
 //# sourceMappingURL=areEqual.js.map

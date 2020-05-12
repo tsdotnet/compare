@@ -3,7 +3,7 @@
  * Licensing: MIT
  */
 
-import {areEqual} from './areEqual';
+import areEqual from './areEqual';
 import type from './type';
 
 /**
@@ -14,12 +14,11 @@ import type from './type';
  * @param extraDepth
  * @returns {boolean}
  */
-export function areEquivalent (
+export default function areEquivalent (
 	a: any,
 	b: any,
 	nullEquivalency: boolean = true,
-	extraDepth: number       = 0): boolean
-{
+	extraDepth: number       = 0): boolean {
 	// Take a step by step approach to ensure efficiency.
 	if(areEqual(a, b, true)) return true;
 

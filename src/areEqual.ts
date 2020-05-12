@@ -13,7 +13,6 @@ import isTrueNaN = type.isTrueNaN;
  * @param strict
  * @returns {boolean|any}
  */
-export function areEqual (a: any, b: any, strict: boolean = true): boolean
-{
+export default function areEqual (a: any, b: any, strict: boolean = true): boolean {
 	return a===b || (!strict && a==b) || (isTrueNaN(a) && isTrueNaN(b));
 }

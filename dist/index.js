@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
-const areEqual_1 = require("./areEqual");
-exports.areEqual = areEqual_1.areEqual;
-const areEquivalent_1 = require("./areEquivalent");
-exports.areEquivalent = areEquivalent_1.areEquivalent;
+const areEqual_1 = tslib_1.__importDefault(require("./areEqual"));
+exports.areEqual = areEqual_1.default;
+const areEquivalent_1 = tslib_1.__importDefault(require("./areEquivalent"));
+exports.areEquivalent = areEquivalent_1.default;
 const areSequencesEqual_1 = tslib_1.__importDefault(require("./areSequencesEqual"));
 exports.areSequencesEqual = areSequencesEqual_1.default;
 const compare_1 = require("./compare");

@@ -2,7 +2,7 @@
  * @author electricessence / https://github.com/electricessence/
  * Licensing: MIT
  */
-import { areEqual } from './areEqual';
+import areEqual from './areEqual';
 /**
  * Compares two comparable objects or primitives.
  * @param a
