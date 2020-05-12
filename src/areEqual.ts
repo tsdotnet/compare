@@ -7,12 +7,11 @@ import type from './type';
 import isTrueNaN = type.isTrueNaN;
 
 /**
- * Used for special comparison including NaN.
+ * Used for special identity (===) comparison including NaN.
  * @param a
  * @param b
- * @param strict
  * @returns {boolean|any}
  */
-export default function areEqual (a: any, b: any, strict: boolean = true): boolean {
-	return a===b || (!strict && a==b) || (isTrueNaN(a) && isTrueNaN(b));
+export default function areEqual (a: any, b: any): boolean {
+	return a===b || (isTrueNaN(a) && isTrueNaN(b));
 }

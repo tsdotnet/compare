@@ -17,6 +17,7 @@ export default function areSequencesEqual<T> (
 	equalityComparer: EqualityComparison<T> = areEqual): boolean {
 
 	if(a===b) return true;
+	if(a==null || b==null) return false;
 
 	if(a instanceof Array
 		&& b instanceof Array

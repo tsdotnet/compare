@@ -5,7 +5,7 @@
 
 import {Primitive, Selector} from '@tsdotnet/common-interfaces';
 import {Comparison} from './Comparable';
-import {comparePrimitives} from './comparePrimitives';
+import comparePrimitives from './comparePrimitives';
 import CompareResult from './CompareResult';
 import Order from './Order';
 import {OrderByComparison, OrderByKey, OrderBySelector} from './OrderBy';
@@ -49,8 +49,13 @@ namespace comparison
 	 * @param {{[key]: Order}} keys
 	 * @return {Comparison<T>}
 	 */
-	export function fromKeys<T extends object> (keys: { [P in keyof T]: Order }): Comparison<T>
+	export function fromKeys<T extends object> (keys: (keyof T)[]): Comparison<T>
+	export function fromKeys<T extends object> (keys: { [P in keyof T]?: Order }): Comparison<T>
+	export function fromKeys<T extends object> (keys: (keyof T)[] | { [P in keyof T]?: Order }): Comparison<T>
 	{
+		if(keys instanceof Array)
+			return join(keys.map(k => fromKey(k)));
+
 		return join(Object
 			.keys(keys)
 			.map(k =>
