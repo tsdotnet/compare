@@ -28,9 +28,7 @@ declare namespace comparison {
      */
     function fromKeys<T extends object>(keys: {
         [P in keyof T]: Order;
-    }): Comparison<{
-        [x: string]: {};
-    }>;
+    }): Comparison<T>;
     /**
      * Joins comparison functions into one by evaluating equality in comparison order.
      * @param {Iterable<Comparison<T>>} comparisons
