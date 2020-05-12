@@ -26,8 +26,9 @@ declare namespace comparison {
      * @param {{[key]: Order}} keys
      * @return {Comparison<T>}
      */
+    function fromKeys<T extends object>(keys: (keyof T)[]): Comparison<T>;
     function fromKeys<T extends object>(keys: {
-        [P in keyof T]: Order;
+        [P in keyof T]?: Order;
     }): Comparison<T>;
     /**
      * Joins comparison functions into one by evaluating equality in comparison order.
