@@ -33,7 +33,7 @@
     "prepublishOnly": "npm run build && run-p validate test",
     "preversion": "run-p lint test",
     "postversion": "git push && git push --tags && npm run docs && git commit -m \"Updated docs.\" docs && git push",
-    "test": "mocha -r ts-node/register tests/**.ts",
+    "test": "mocha -r ts-node/register tests/**/*.ts",
     "validate": "node ./.build/validate-package.js"
   },
   "repository": {
