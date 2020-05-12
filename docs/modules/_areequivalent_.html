@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;areEquivalent&quot; | @tsdotnet/compare - v1.2.2</title>
-	<meta name="description" content="Documentation for @tsdotnet/compare - v1.2.2">
+	<title>&quot;areEquivalent&quot; | @tsdotnet/compare - v1.3.0</title>
+	<meta name="description" content="Documentation for @tsdotnet/compare - v1.3.0">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
 </head>
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">@tsdotnet/compare - v1.2.2</a>
+					<a href="../index.html" class="title">@tsdotnet/compare - v1.3.0</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -81,18 +81,18 @@
 					<a name="areequivalent" class="tsd-anchor"></a>
 					<h3>are<wbr>Equivalent</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">are<wbr>Equivalent<span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, nullEquivalency<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span>, extraDepth<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+						<li class="tsd-signature tsd-kind-icon">are<wbr>Equivalent<span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/tsdotnet/compare/blob/bcf544d/src/areEquivalent.ts#L17">areEquivalent.ts:17</a></li>
+									<li>Defined in <a href="https://github.com/tsdotnet/compare/blob/051a310/src/areEquivalent.ts#L15">areEquivalent.ts:15</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Determines if two primitives are equal or if two objects have the same key/value combinations.</p>
+									<p>Used for special equality (==) comparison including NaN.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -102,15 +102,6 @@
 								</li>
 								<li>
 									<h5>b: <span class="tsd-signature-type">any</span></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> nullEquivalency: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = true</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>If true, null/undefined will be equivalent to an empty object {}.</p>
-									</div>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> extraDepth: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -132,6 +123,9 @@
 						<a href="_compareresult_d_.html">&quot;<wbr>Compare<wbr>Result.d&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
+						<a href="_equalityoperator_.html">&quot;<wbr>Equality<wbr>Operator&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
 						<a href="_keysortedcontext_.html">&quot;<wbr>Key<wbr>Sorted<wbr>Context&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -148,6 +142,9 @@
 					</li>
 					<li class="current tsd-kind-module">
 						<a href="_areequivalent_.html">&quot;are<wbr>Equivalent&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="_areequivalentobjects_.html">&quot;are<wbr>Equivalent<wbr>Objects&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="_aresequencesequal_.html">&quot;are<wbr>Sequences<wbr>Equal&quot;</a>
@@ -188,6 +185,9 @@
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
 				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
