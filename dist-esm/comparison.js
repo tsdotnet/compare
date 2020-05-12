@@ -41,9 +41,9 @@ var comparison;
     function fromKeys(keys) {
         return join(Object
             .keys(keys)
-            .map(k => fromKey(k, 
+            .map(k => 
         // @ts-ignore
-        keys[k])));
+        fromKey(k, keys[k])));
     }
     comparison_1.fromKeys = fromKeys;
     /**

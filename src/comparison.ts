@@ -49,14 +49,13 @@ namespace comparison
 	 * @param {{[key]: Order}} keys
 	 * @return {Comparison<T>}
 	 */
-	export function fromKeys<T extends object> (keys: { [P in keyof T]: Order })
+	export function fromKeys<T extends object> (keys: { [P in keyof T]: Order }): Comparison<T>
 	{
 		return join(Object
 			.keys(keys)
 			.map(k =>
-				fromKey(k,
-					// @ts-ignore
-					keys[k])));
+				// @ts-ignore
+				fromKey(k, keys[k])));
 	}
 
 	/**

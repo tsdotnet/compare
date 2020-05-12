@@ -8,17 +8,17 @@ import {Comparison} from './Comparable';
 import Order from './Order';
 
 export type OrderByOption = {
-	order?: Order,
+	order?: Order;
 }
 
 export type OrderByComparison<T> = Comparison<T> | OrderByOption & {
-	comparison: Comparison<T>,
+	comparison: Comparison<T>;
 };
 
 export type OrderBySelector<T> = Selector<T, Primitive> | OrderByOption & {
-	selector: Selector<T, Primitive>
+	selector: Selector<T, Primitive>;
 };
 
 export type OrderByKey<T extends object> = keyof T | OrderByOption & {
-	key: keyof T
+	key: keyof T;
 }
