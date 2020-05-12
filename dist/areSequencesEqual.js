@@ -15,6 +15,8 @@ const index_1 = require("./index");
 function areSequencesEqual(a, b, equalityComparer = index_1.areEqual) {
     if (a === b)
         return true;
+    if (a == null || b == null)
+        return false;
     if (a instanceof Array
         && b instanceof Array
         && a.length != b.length)

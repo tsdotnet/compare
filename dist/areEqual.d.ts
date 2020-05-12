@@ -3,10 +3,9 @@
  * Licensing: MIT
  */
 /**
- * Used for special comparison including NaN.
+ * Used for special identity (===) comparison including NaN.
  * @param a
  * @param b
- * @param strict
  * @returns {boolean|any}
  */
-export default function areEqual(a: any, b: any, strict?: boolean): boolean;
+export default function areEqual(a: any, b: any): boolean;

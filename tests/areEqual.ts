@@ -18,8 +18,8 @@ describe('areEquivalent', () => {
 		expect(areEquivalent(1, 1)).to.be.true;
 		expect(areEquivalent(false, null)).to.be.false;
 		expect(areEquivalent(NaN, NaN)).to.be.true;
-		expect(areEqual(0, null)).to.be.false;
-		expect(areEqual(0, undefined)).to.be.false;
-		expect(areEqual(undefined, null)).to.be.true;
+		expect(areEquivalent(0, null)).to.be.false;
+		expect(areEquivalent(0, undefined)).to.be.false;
+		expect(areEquivalent(undefined, null)).to.be.true;
 	});
 });

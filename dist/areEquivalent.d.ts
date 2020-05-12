@@ -3,11 +3,9 @@
  * Licensing: MIT
  */
 /**
- * Determines if two primitives are equal or if two objects have the same key/value combinations.
+ * Used for special equality (==) comparison including NaN.
  * @param a
  * @param b
- * @param nullEquivalency If true, null/undefined will be equivalent to an empty object {}.
- * @param extraDepth
- * @returns {boolean}
+ * @returns {boolean|any}
  */
-export default function areEquivalent(a: any, b: any, nullEquivalency?: boolean, extraDepth?: number): boolean;
+export default function areEquivalent(a: any, b: any): boolean;

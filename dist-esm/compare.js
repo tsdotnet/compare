@@ -2,18 +2,23 @@
  * @author electricessence / https://github.com/electricessence/
  * Licensing: MIT
  */
-import { comparePrimitives } from './comparePrimitives';
+import comparePrimitives from './comparePrimitives';
 import type from './type';
 const COMPARE_TO = 'compareTo';
-export function compare(a, b, strict = true) {
+function compare(a, b) {
     if (a && type.hasMember(a, COMPARE_TO))
         return a.compareTo(b);
     // If a has compareTo, use it.
     else if (b && type.hasMember(b, COMPARE_TO))
         return -b.compareTo(a); // a doesn't have compareTo? check if b does and invert.
-    return comparePrimitives(a, b, strict);
+    return comparePrimitives(a, b);
 }
-export function compareInverted(a, b, strict = true) {
-    return compare(a, b, strict) * -1;
-}
+(function (compare) {
+    function compareInverted(a, b) {
+        return -compare(a, b);
+    }
+    compare.compareInverted = compareInverted;
+    compare.primitives = comparePrimitives;
+})(compare || (compare = {}));
+export default compare;
 //# sourceMappingURL=compare.js.map

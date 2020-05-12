@@ -2,7 +2,7 @@
  * @author electricessence / https://github.com/electricessence/
  * Licensing: MIT
  */
-import { compare } from './compare';
+import compare from './compare';
 import SortContext from './SortContext';
 /**
  * A class for helping in complex sorting patterns using a key selector.

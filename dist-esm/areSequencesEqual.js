@@ -13,6 +13,8 @@ import { areEqual } from './index';
 export default function areSequencesEqual(a, b, equalityComparer = areEqual) {
     if (a === b)
         return true;
+    if (a == null || b == null)
+        return false;
     if (a instanceof Array
         && b instanceof Array
         && a.length != b.length)

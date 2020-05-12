@@ -2,7 +2,7 @@
  * @author electricessence / https://github.com/electricessence/
  * Licensing: MIT
  */
-import { comparePrimitives } from './comparePrimitives';
+import comparePrimitives from './comparePrimitives';
 var comparison;
 (function (comparison_1) {
     /**
@@ -33,12 +33,9 @@ var comparison;
         };
     }
     comparison_1.fromKey = fromKey;
-    /**
-     * Creates a comparison function with specific ordering by key.
-     * @param {{[key]: Order}} keys
-     * @return {Comparison<T>}
-     */
     function fromKeys(keys) {
+        if (keys instanceof Array)
+            return join(keys.map(k => fromKey(k)));
         return join(Object
             .keys(keys)
             .map(k => 

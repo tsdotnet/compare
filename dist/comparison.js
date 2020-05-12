@@ -4,7 +4,8 @@
  * Licensing: MIT
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-const comparePrimitives_1 = require("./comparePrimitives");
+const tslib_1 = require("tslib");
+const comparePrimitives_1 = tslib_1.__importDefault(require("./comparePrimitives"));
 var comparison;
 (function (comparison_1) {
     /**
@@ -17,7 +18,7 @@ var comparison;
         if (order !== -1)
             order = 1;
         return function (a, b) {
-            return comparePrimitives_1.comparePrimitives(selector(a), selector(b)) * order;
+            return comparePrimitives_1.default(selector(a), selector(b)) * order;
         };
     }
     comparison_1.fromSelector = fromSelector;
@@ -31,16 +32,13 @@ var comparison;
         if (order !== -1)
             order = 1;
         return function (a, b) {
-            return comparePrimitives_1.comparePrimitives(a[key], b[key]) * order;
+            return comparePrimitives_1.default(a[key], b[key]) * order;
         };
     }
     comparison_1.fromKey = fromKey;
-    /**
-     * Creates a comparison function with specific ordering by key.
-     * @param {{[key]: Order}} keys
-     * @return {Comparison<T>}
-     */
     function fromKeys(keys) {
+        if (keys instanceof Array)
+            return join(keys.map(k => fromKey(k)));
         return join(Object
             .keys(keys)
             .map(k => 

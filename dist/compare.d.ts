@@ -3,6 +3,7 @@
  * Licensing: MIT
  */
 import { ComparableObject } from './Comparable';
+import comparePrimitives from './comparePrimitives';
 import CompareResult from './CompareResult';
 import type from './type';
 /**
@@ -10,14 +11,18 @@ import type from './type';
  * @param a
  * @param b
  */
-export declare function compare<T>(a: ComparableObject<T>, b: T): number;
-export declare function compare<T>(a: T, b: ComparableObject<T>): number;
-export declare function compare<T extends type.Primitive>(a: T, b: T, strict?: boolean): CompareResult;
-/**
- * Compares two comparable objects or primitives and inverts the sign of the result.
- * @param a
- * @param b
- */
-export declare function compareInverted<T>(a: ComparableObject<T>, b: T): number;
-export declare function compareInverted<T>(a: T, b: ComparableObject<T>): number;
-export declare function compareInverted<T extends type.Primitive>(a: T, b: T, strict?: boolean): CompareResult;
+declare function compare<T>(a: ComparableObject<T>, b: T): number;
+declare function compare<T>(a: T, b: ComparableObject<T>): number;
+declare function compare<T extends type.Primitive>(a: T, b: T): CompareResult;
+declare namespace compare {
+    /**
+     * Compares two comparable objects or primitives and inverts the sign of the result.
+     * @param a
+     * @param b
+     */
+    function compareInverted<T>(a: ComparableObject<T>, b: T): number;
+    function compareInverted<T>(a: T, b: ComparableObject<T>): number;
+    function compareInverted<T extends type.Primitive>(a: T, b: T): CompareResult;
+    const primitives: typeof comparePrimitives;
+}
+export default compare;
