@@ -65,6 +65,6 @@
     "typescript": "^3.9.2"
   },
   "dependencies": {
-    "@tsdotnet/common-interfaces": "^1.0.3"
+    "@tsdotnet/common-interfaces": "^1.0.4"
   }
 }
