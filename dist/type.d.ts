@@ -14,7 +14,7 @@ declare namespace type {
         Undefined = "undefined",
         Function = "function"
     }
-    type Name<T> = T extends symbol ? Value.Symbol : T extends string ? Value.String : T extends number ? Value.Number : T extends boolean ? Value.Boolean : T extends undefined ? Value.Undefined : T extends Function ? Value.Function : Value.Object;
+    type Name<T> = T extends symbol ? 'symbol' : T extends string ? 'string' : T extends number ? 'number' : T extends boolean ? 'boolean' : T extends undefined ? 'undefined' : T extends Function ? 'function' : 'object';
     export type Literal = Name<symbol> | Name<string> | Name<number> | Name<boolean> | Name<undefined> | Name<Function> | Name<object>;
     /**
      * Returns true if the target matches the type (instanceof).
@@ -138,7 +138,7 @@ declare namespace type {
      * @param type
      * @returns {boolean}
      */
-    export function hasMemberOfType<T>(instance: any, property: string, type: Value): instance is T;
+    export function hasMemberOfType<T>(instance: any, property: string, type: Literal): instance is T;
     /**
      * Tests to see if an object has a function of the provide name.
      * @param instance

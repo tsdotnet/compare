@@ -23,18 +23,18 @@ namespace type
 	}
 
 	type Name<T> = T extends symbol
-		? Value.Symbol
+		? 'symbol'
 		: T extends string
-			? Value.String
+			? 'string'
 			: T extends number
-				? Value.Number
+				? 'number'
 				: T extends boolean
-					? Value.Boolean
+					? 'boolean'
 					: T extends undefined
-						? Value.Undefined
+						? 'undefined'
 						: T extends Function
-							? Value.Function
-							: Value.Object;
+							? 'function'
+							: 'object';
 
 	export type Literal =
 		Name<symbol>
@@ -273,7 +273,10 @@ namespace type
 	 * @param type
 	 * @returns {boolean}
 	 */
-	export function hasMemberOfType<T> (instance: any, property: string, type: Value): instance is T
+	export function hasMemberOfType<T> (
+		instance: any,
+		property: string,
+		type: Literal): instance is T
 	{
 		return hasMember(instance, property) && typeof instance[property]===type;
 	}
