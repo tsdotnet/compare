@@ -8,5 +8,5 @@ import CompareResult from './CompareResult';
 import KeySortedContext from './KeySortedContext';
 import Order from './Order';
 import SortContext from './SortContext';
-import type from './type';
+import type from '@tsdotnet/type';
 export { areEqual, areEquivalent, areEquivalentObjects, areSequencesEqual, compare, type, Comparable, CompareResult, Comparison, EqualityComparison, Order, SortContext, KeySortedContext };

@@ -3,10 +3,11 @@
  * Licensing: MIT
  */
 
+import {Primitive} from '@tsdotnet/common-interfaces';
+import type from '@tsdotnet/type';
 import {ComparableObject} from './Comparable';
 import comparePrimitives from './comparePrimitives';
 import CompareResult from './CompareResult';
-import type from './type';
 
 const COMPARE_TO = 'compareTo';
 
@@ -17,7 +18,7 @@ const COMPARE_TO = 'compareTo';
  */
 function compare<T> (a: ComparableObject<T>, b: T): number;
 function compare<T> (a: T, b: ComparableObject<T>): number;
-function compare<T extends type.Primitive> (a: T, b: T): CompareResult;
+function compare<T extends Primitive> (a: T, b: T): CompareResult;
 function compare (a: any, b: any): CompareResult
 {
 	if(a && type.hasMember(a, COMPARE_TO)) return a.compareTo(b);
@@ -36,7 +37,7 @@ namespace compare
 	 */
 	export function compareInverted<T> (a: ComparableObject<T>, b: T): number;
 	export function compareInverted<T> (a: T, b: ComparableObject<T>): number;
-	export function compareInverted<T extends type.Primitive> (a: T, b: T): CompareResult;
+	export function compareInverted<T extends Primitive> (a: T, b: T): CompareResult;
 	export function compareInverted (a: any, b: any): CompareResult
 	{
 		return -compare(a, b);

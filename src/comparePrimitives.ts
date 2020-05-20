@@ -3,9 +3,9 @@
  * Licensing: MIT
  */
 
+import {Primitive} from '@tsdotnet/common-interfaces';
 import areEqual from './areEqual';
 import CompareResult from './CompareResult';
-import type from './type';
 
 
 /**
@@ -13,7 +13,7 @@ import type from './type';
  * @param a
  * @param b
  */
-function comparePrimitives<T extends type.Primitive> (a: T, b: T): CompareResult
+function comparePrimitives<T extends Primitive> (a: T, b: T): CompareResult
 {
 	if(areEqual(a, b)) return CompareResult.Equal;
 
@@ -31,7 +31,7 @@ namespace comparePrimitives
 	 * @param a
 	 * @param b
 	 */
-	export function inverted<T extends type.Primitive> (a: T, b: T): CompareResult
+	export function inverted<T extends Primitive> (a: T, b: T): CompareResult
 	{
 		return -comparePrimitives(a, b);
 	}

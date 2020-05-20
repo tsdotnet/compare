@@ -2,7 +2,7 @@
  * @author electricessence / https://github.com/electricessence/
  * Licensing: MIT
  */
-import type from './type';
+import type from '@tsdotnet/type';
 var isTrueNaN = type.isTrueNaN;
 /**
  * Used for special identity (===) comparison including NaN.

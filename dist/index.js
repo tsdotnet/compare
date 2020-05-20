@@ -16,6 +16,6 @@ const KeySortedContext_1 = tslib_1.__importDefault(require("./KeySortedContext")
 exports.KeySortedContext = KeySortedContext_1.default;
 const SortContext_1 = tslib_1.__importDefault(require("./SortContext"));
 exports.SortContext = SortContext_1.default;
-const type_1 = tslib_1.__importDefault(require("./type"));
+const type_1 = tslib_1.__importDefault(require("@tsdotnet/type"));
 exports.type = type_1.default;
 //# sourceMappingURL=index.js.map

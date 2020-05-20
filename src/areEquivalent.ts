@@ -3,7 +3,7 @@
  * Licensing: MIT
  */
 
-import type from './type';
+import type from '@tsdotnet/type';
 import isTrueNaN = type.isTrueNaN;
 
 /**

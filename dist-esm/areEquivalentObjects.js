@@ -2,8 +2,8 @@
  * @author electricessence / https://github.com/electricessence/
  * Licensing: MIT
  */
+import type from '@tsdotnet/type';
 import areEqual from './areEqual';
-import type from './type';
 /**
  * Determines if two primitives are equal or if two objects have the same key/value combinations.
  * @param a
