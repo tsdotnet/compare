@@ -3,8 +3,6 @@
  * Licensing: MIT
  */
 
-/* eslint-disable no-inner-declarations,@typescript-eslint/no-namespace */
-
 import {ArrayLikeWritable, NullablePrimitive, Primitive as P} from '@tsdotnet/common-interfaces';
 
 namespace type
