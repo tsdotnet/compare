@@ -66,7 +66,7 @@
   },
   "dependencies": {
     "@tsdotnet/common-interfaces": "^1.0.4",
-    "@tsdotnet/type": "^1.0.1",
+    "@tsdotnet/type": "^1.0.2",
     "tslib": "^2.0.0"
   }
 }
