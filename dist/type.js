@@ -187,6 +187,15 @@ var type;
             (!isFunction(instance) && hasMember(instance, 'length')));
     }
     type_1.isArrayLike = isArrayLike;
+    /**
+     * Checks to see if [Symbol.iterator] is a function.
+     * @param instance
+     * @return {instance is Iterable<T>}
+     */
+    function isIterable(instance) {
+        return hasMemberOfType(instance, Symbol.iterator, "function" /* Function */);
+    }
+    type_1.isIterable = isIterable;
 })(type || (type = {}));
 Object.freeze(type);
 exports.default = type;

@@ -11,6 +11,8 @@ namespace type
 {
 	export type Primitive = P;
 
+	export type PropertyKey = string | number | symbol;
+
 	export const enum Value
 	{
 		Boolean   = 'boolean',
@@ -192,7 +194,7 @@ namespace type
 	 * @param value
 	 * @returns {boolean}
 	 */
-	export function isPropertyKey (value: any): value is string | number | symbol
+	export function isPropertyKey (value: any): value is PropertyKey
 	{
 		const t = typeof value;
 		switch(t)
@@ -255,7 +257,7 @@ namespace type
 	 */
 	export function hasMember (
 		instance: any,
-		property: string,
+		property: PropertyKey,
 		ignoreUndefined: boolean = true): boolean
 	{
 		return (
@@ -275,7 +277,7 @@ namespace type
 	 */
 	export function hasMemberOfType<T> (
 		instance: any,
-		property: string,
+		property: PropertyKey,
 		type: Literal): instance is T
 	{
 		return hasMember(instance, property) && typeof instance[property]===type;
@@ -287,7 +289,7 @@ namespace type
 	 * @param {string} name
 	 * @returns {instance is T}
 	 */
-	export function hasMethod<T> (instance: any, name: string): instance is T
+	export function hasMethod<T> (instance: any, name: PropertyKey): instance is T
 	{
 		return hasMemberOfType<T>(instance, name, Value.Function);
 	}
@@ -314,6 +316,16 @@ namespace type
 			isString(instance) ||
 			(!isFunction(instance) && hasMember(instance, 'length'))
 		);
+	}
+
+	/**
+	 * Checks to see if [Symbol.iterator] is a function.
+	 * @param instance
+	 * @return {instance is Iterable<T>}
+	 */
+	export function isIterable<T> (instance: any): instance is Iterable<T>
+	{
+		return hasMemberOfType(instance, Symbol.iterator, Value.Function);
 	}
 
 }

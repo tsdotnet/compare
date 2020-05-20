@@ -5,6 +5,7 @@
 import { ArrayLikeWritable, NullablePrimitive, Primitive as P } from '@tsdotnet/common-interfaces';
 declare namespace type {
     export type Primitive = P;
+    export type PropertyKey = string | number | symbol;
     export const enum Value {
         Boolean = "boolean",
         Number = "number",
@@ -95,7 +96,7 @@ declare namespace type {
      * @param value
      * @returns {boolean}
      */
-    export function isPropertyKey(value: any): value is string | number | symbol;
+    export function isPropertyKey(value: any): value is PropertyKey;
     /**
      * Returns true if the value parameter is a function.
      * @param value
@@ -130,7 +131,7 @@ declare namespace type {
      * @param ignoreUndefined When ignoreUndefined is true, if the member exists but is undefined, it will return false.
      * @returns {boolean}
      */
-    export function hasMember(instance: any, property: string, ignoreUndefined?: boolean): boolean;
+    export function hasMember(instance: any, property: PropertyKey, ignoreUndefined?: boolean): boolean;
     /**
      * Returns true if the member matches the type.
      * @param instance
@@ -138,20 +139,26 @@ declare namespace type {
      * @param type
      * @returns {boolean}
      */
-    export function hasMemberOfType<T>(instance: any, property: string, type: Literal): instance is T;
+    export function hasMemberOfType<T>(instance: any, property: PropertyKey, type: Literal): instance is T;
     /**
      * Tests to see if an object has a function of the provide name.
      * @param instance
      * @param {string} name
      * @returns {instance is T}
      */
-    export function hasMethod<T>(instance: any, name: string): instance is T;
+    export function hasMethod<T>(instance: any, name: PropertyKey): instance is T;
     /**
      * Checks to see if object is an array or something with length property that isn't a function.
      * @param instance
      * @returns {instance is ArrayLikeWritable<T>}
      */
     export function isArrayLike<T>(instance: any): instance is ArrayLikeWritable<T>;
+    /**
+     * Checks to see if [Symbol.iterator] is a function.
+     * @param instance
+     * @return {instance is Iterable<T>}
+     */
+    export function isIterable<T>(instance: any): instance is Iterable<T>;
     export {};
 }
 export default type;
