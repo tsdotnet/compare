@@ -21,9 +21,9 @@ function compare<T> (a: T, b: ComparableObject<T>): number;
 function compare<T extends Primitive> (a: T, b: T): CompareResult;
 function compare (a: any, b: any): CompareResult
 {
-	if(a && type.hasMember(a, COMPARE_TO)) return a.compareTo(b);
+	if(a && type.hasMember<ComparableObject<unknown>>(a, COMPARE_TO)) return a.compareTo(b);
 	// If a has compareTo, use it.
-	else if(b && type.hasMember(b, COMPARE_TO)) return -b.compareTo(a); // a doesn't have compareTo? check if b does and invert.
+	else if(b && type.hasMember<ComparableObject<unknown>>(b, COMPARE_TO)) return -b.compareTo(a); // a doesn't have compareTo? check if b does and invert.
 
 	return comparePrimitives(a, b);
 }
