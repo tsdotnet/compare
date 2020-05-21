@@ -1,3 +1,8 @@
+/**
+ * @packageDocumentation
+ * @module compare
+ */
+
 import type from '@tsdotnet/type';
 import areEqual from './areEqual';
 import areEquivalentObjects from './areEquivalent';

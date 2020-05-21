@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Comparer | @tsdotnet/compare - v1.3.11</title>
+	<title>ComparableObject | @tsdotnet/compare - v1.3.11</title>
 	<meta name="description" content="Documentation for @tsdotnet/compare - v1.3.11">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -52,13 +52,13 @@
 					<a href="../index.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_comparable_d_.html">&quot;Comparable.d&quot;</a>
+					<a href="../modules/compare.html">compare</a>
 				</li>
 				<li>
-					<a href="_comparable_d_.comparer.html">Comparer</a>
+					<a href="compare.comparableobject.html">ComparableObject</a>
 				</li>
 			</ul>
-			<h1>Interface Comparer&lt;T&gt;</h1>
+			<h1>Interface ComparableObject&lt;T&gt;</h1>
 		</div>
 	</div>
 </header>
@@ -77,15 +77,8 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">Comparer</span>
+						<span class="target">ComparableObject</span>
 					</li>
-				</ul>
-			</section>
-			<section class="tsd-panel">
-				<h3>Implemented by</h3>
-				<ul class="tsd-hierarchy">
-					<li><a href="../classes/_keysortedcontext_.keysortedcontext.html" class="tsd-signature-type">KeySortedContext</a></li>
-					<li><a href="../classes/_sortcontext_.sortcontext.html" class="tsd-signature-type">SortContext</a></li>
 				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -95,7 +88,7 @@
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="_comparable_d_.comparer.html#compare" class="tsd-kind-icon">compare</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="compare.comparableobject.html#compareto" class="tsd-kind-icon">compare<wbr>To</a></li>
 							</ul>
 						</section>
 					</div>
@@ -104,25 +97,22 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
-					<a name="compare" class="tsd-anchor"></a>
-					<h3>compare</h3>
+					<a name="compareto" class="tsd-anchor"></a>
+					<h3>compare<wbr>To</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-						<li class="tsd-signature tsd-kind-icon">compare<span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+						<li class="tsd-signature tsd-kind-icon">compare<wbr>To<span class="tsd-signature-symbol">(</span>other<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/tsdotnet/compare/blob/bb9525f/src/Comparable.d.ts#L16">Comparable.d.ts:16</a></li>
+									<li>Defined in <a href="https://github.com/tsdotnet/compare/blob/a7af519/src/Comparable.d.ts#L13">Comparable.d.ts:13</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>a: <span class="tsd-signature-type">T</span></h5>
-								</li>
-								<li>
-									<h5>b: <span class="tsd-signature-type">T</span></h5>
+									<h5>other: <span class="tsd-signature-type">T</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -138,77 +128,71 @@
 						<a href="../index.html"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-module">
-						<a href="../modules/_comparable_d_.html">&quot;<wbr>Comparable.d&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/_compareresult_d_.html">&quot;<wbr>Compare<wbr>Result.d&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/_equalityoperator_.html">&quot;<wbr>Equality<wbr>Operator&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/_keysortedcontext_.html">&quot;<wbr>Key<wbr>Sorted<wbr>Context&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/_order_d_.html">&quot;<wbr>Order.d&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/_orderby_d_.html">&quot;<wbr>Order<wbr>By.d&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/_sortcontext_.html">&quot;<wbr>Sort<wbr>Context&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/_areequal_.html">&quot;are<wbr>Equal&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/_areequivalent_.html">&quot;are<wbr>Equivalent&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/_areequivalentobjects_.html">&quot;are<wbr>Equivalent<wbr>Objects&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/_aresequencesequal_.html">&quot;are<wbr>Sequences<wbr>Equal&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/_compare_.html">&quot;compare&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/_compareprimitives_.html">&quot;compare<wbr>Primitives&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/_comparison_.html">&quot;comparison&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/_createkeyselector_.html">&quot;create<wbr>Key<wbr>Selector&quot;</a>
+						<a href="../modules/compare.html">compare</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="_comparable_d_.comparableobject.html" class="tsd-kind-icon">Comparable<wbr>Object</a>
+					<li class=" tsd-kind-enum tsd-parent-kind-module">
+						<a href="../enums/compare.equalityoperator.html" class="tsd-kind-icon">Equality<wbr>Operator</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="../classes/compare.keysortedcontext.html" class="tsd-kind-icon">Key<wbr>Sorted<wbr>Context</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="../classes/compare.sortcontext.html" class="tsd-kind-icon">Sort<wbr>Context</a>
 					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="_comparable_d_.comparer.html" class="tsd-kind-icon">Comparer</a>
+						<a href="compare.comparableobject.html" class="tsd-kind-icon">Comparable<wbr>Object</a>
 						<ul>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
-								<a href="_comparable_d_.comparer.html#compare" class="tsd-kind-icon">compare</a>
+								<a href="compare.comparableobject.html#compareto" class="tsd-kind-icon">compare<wbr>To</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
 					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="_comparable_d_.comparison.html" class="tsd-kind-icon">Comparison</a>
+						<a href="compare.comparer.html" class="tsd-kind-icon">Comparer</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="_comparable_d_.equalitycomparison.html" class="tsd-kind-icon">Equality<wbr>Comparison</a>
+						<a href="compare.comparison.html" class="tsd-kind-icon">Comparison</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="compare.equalitycomparison.html" class="tsd-kind-icon">Equality<wbr>Comparison</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
-						<a href="../modules/_comparable_d_.html#comparable" class="tsd-kind-icon">Comparable</a>
+						<a href="../modules/compare.html#comparable" class="tsd-kind-icon">Comparable</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="../modules/compare.html#orderbycomparison" class="tsd-kind-icon">Order<wbr>ByComparison</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="../modules/compare.html#orderbykey" class="tsd-kind-icon">Order<wbr>ByKey</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+						<a href="../modules/compare.html#orderbyoption" class="tsd-kind-icon">Order<wbr>ByOption</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="../modules/compare.html#orderbyselector" class="tsd-kind-icon">Order<wbr>BySelector</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="../modules/compare.html#areequal" class="tsd-kind-icon">are<wbr>Equal</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="../modules/compare.html#areequivalent" class="tsd-kind-icon">are<wbr>Equivalent</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="../modules/compare.html#areequivalentobjects" class="tsd-kind-icon">are<wbr>Equivalent<wbr>Objects</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="../modules/compare.html#aresequencesequal" class="tsd-kind-icon">are<wbr>Sequences<wbr>Equal</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="../modules/compare.html#createkeyselector" class="tsd-kind-icon">create<wbr>Key<wbr>Selector</a>
 					</li>
 				</ul>
 			</nav>
