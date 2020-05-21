@@ -2,6 +2,10 @@
  * @author electricessence / https://github.com/electricessence/
  * Licensing: MIT
  */
+/**
+ * @packageDocumentation
+ * @module compare
+ */
 import { Primitive, Selector } from '@tsdotnet/common-interfaces';
 import { Comparison } from './Comparable';
 import Order from './Order';

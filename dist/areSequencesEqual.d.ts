@@ -2,6 +2,10 @@
  * @author electricessence / https://github.com/electricessence/
  * Licensing: MIT
  */
+/**
+ * @packageDocumentation
+ * @module compare
+ */
 import { EqualityComparison } from './index';
 /**
  * Compares two sequences for equality.

@@ -2,6 +2,10 @@
  * @author electricessence / https://github.com/electricessence/
  * Licensing: MIT
  */
+/**
+ * @packageDocumentation
+ * @module compare
+ */
 import type from '@tsdotnet/type';
 var isTrueNaN = type.isTrueNaN;
 /**

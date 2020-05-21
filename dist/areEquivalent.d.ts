@@ -3,6 +3,10 @@
  * Licensing: MIT
  */
 /**
+ * @packageDocumentation
+ * @module compare
+ */
+/**
  * Used for special equality (==) comparison including NaN.
  * @param a
  * @param b

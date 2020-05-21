@@ -2,6 +2,10 @@
  * @author electricessence / https://github.com/electricessence/
  * Licensing: MIT
  */
+/**
+ * @packageDocumentation
+ * @module compare
+ */
 import compare from './compare';
 import SortContext from './SortContext';
 /**

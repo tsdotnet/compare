@@ -3,6 +3,10 @@
  * @author electricessence / https://github.com/electricessence/
  * Licensing: MIT
  */
+/**
+ * @packageDocumentation
+ * @module compare
+ */
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * A class for helping in complex sorting patterns.

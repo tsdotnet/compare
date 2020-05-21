@@ -3,6 +3,10 @@
  * Licensing: MIT
  */
 /**
+ * @packageDocumentation
+ * @module compare
+ */
+/**
  * A class for helping in complex sorting patterns.
  */
 export default class SortContext {

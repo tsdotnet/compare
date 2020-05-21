@@ -1,4 +1,9 @@
 /**
+ * @packageDocumentation
+ * @module compare
+ */
+
+/**
  * Enum representation of sorting order.
  */
 declare const enum Order

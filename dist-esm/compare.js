@@ -2,6 +2,10 @@
  * @author electricessence / https://github.com/electricessence/
  * Licensing: MIT
  */
+/**
+ * @packageDocumentation
+ * @module compare
+ */
 import type from '@tsdotnet/type';
 import comparePrimitives from './comparePrimitives';
 const COMPARE_TO = 'compareTo';

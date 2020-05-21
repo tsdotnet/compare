@@ -2,6 +2,10 @@
  * @author electricessence / https://github.com/electricessence/
  * Licensing: MIT
  */
+/**
+ * @packageDocumentation
+ * @module compare
+ */
 import comparePrimitives from './comparePrimitives';
 var comparison;
 (function (comparison_1) {
