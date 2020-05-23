@@ -14,6 +14,8 @@ import CompareResult from './CompareResult';
 import Order from './Order';
 import {OrderByComparison, OrderByKey, OrderBySelector} from './OrderBy';
 
+/* eslint-disable @typescript-eslint/ban-types */
+
 namespace comparison
 {
 	/**
@@ -55,16 +57,11 @@ namespace comparison
 	 */
 	export function fromKeys<T extends object> (keys: (keyof T)[]): Comparison<T>
 	export function fromKeys<T extends object> (keys: { [P in keyof T]?: Order }): Comparison<T>
-	export function fromKeys<T extends object> (keys: (keyof T)[] | { [P in keyof T]?: Order }): Comparison<T>
+	export function fromKeys<T extends Record<PropertyKey, unknown>> (keys: (keyof T)[] | { [P in keyof T]?: Order }): Comparison<T>
 	{
-		if(keys instanceof Array)
-			return join(keys.map(k => fromKey(k)));
-
-		return join(Object
-			.keys(keys)
-			.map(k =>
-				// @ts-ignore
-				fromKey(k, keys[k])));
+		return keys instanceof Array
+			? join(keys.map(k => fromKey(k)))
+			: join(Object.keys(keys).map(k => fromKey(k, keys[k])));
 	}
 
 	/**
@@ -89,8 +86,11 @@ namespace comparison
 	 * @param {OrderBySelector<T> | OrderByComparison<T> | [(OrderByComparison<T> | OrderBySelector<T>)]} orderBy
 	 * @return {Comparison<T>}
 	 */
-	export function from<T> (orderBy: OrderBySelector<T> | OrderByComparison<T> | [OrderByComparison<T> | OrderBySelector<T>]): Comparison<T>
-	export function from<T extends object> (orderBy: OrderByKey<T> | OrderBySelector<T> | OrderByComparison<T> | [OrderByKey<T> | OrderBySelector<T> | OrderByComparison<T>]): Comparison<T>
+	export function from<T> (
+		orderBy: OrderBySelector<T> | OrderByComparison<T> | [OrderByComparison<T> | OrderBySelector<T>]): Comparison<T>
+	export function from<T extends object> (
+		orderBy: OrderByKey<T> | OrderBySelector<T> | OrderByComparison<T> | [OrderByKey<T> | OrderBySelector<T> | OrderByComparison<T>]): Comparison<T>
+	// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 	export function from (orderBy: any): Comparison<any>
 	{
 		if(typeof orderBy==='string') return fromKey(orderBy);

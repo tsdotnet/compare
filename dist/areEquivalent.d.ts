@@ -12,4 +12,4 @@
  * @param b
  * @returns {boolean|any}
  */
-export default function areEquivalent(a: any, b: any): boolean;
+export default function areEquivalent(a: unknown, b: unknown): boolean;

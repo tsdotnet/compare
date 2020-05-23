@@ -18,7 +18,7 @@ type ValueOf<T> = T[keyof T];
  * @param keys The keys desired.
  * @return The selector function.
  */
-export default function createKeySelector<T extends object> (
+export default function createKeySelector<T extends Record<PropertyKey, unknown>> (
 	...keys: Keys<T>): Selector<T, Iterable<ValueOf<T>>> {
 	return function* (e: T): Iterable<any> {
 		for(const k of keys)

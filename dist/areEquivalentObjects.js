@@ -41,13 +41,13 @@ function areEquivalentObjects(a, b, nullEquivalency = true, extraDepth = 0) {
         bKeys.sort();
         for (let i = 0; i < len; i++) {
             const key = aKeys[i];
-            if (key !== bKeys[i] || !areEqual_1.default(a[key], b[key]))
+            if (key !== bKeys[i] || !areEqual_1.default(a[key], a[key]))
                 return false;
         }
         // Doesn't track circular references but allows for controlling the amount of recursion.
         if (extraDepth > 0) {
             for (const key of aKeys) {
-                if (!areEquivalentObjects(a[key], b[key], nullEquivalency, extraDepth - 1))
+                if (!areEquivalentObjects(a[key], a[key], nullEquivalency, extraDepth - 1))
                     return false;
             }
         }

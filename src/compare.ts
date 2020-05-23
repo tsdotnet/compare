@@ -23,13 +23,13 @@ const COMPARE_TO = 'compareTo';
 function compare<T> (a: ComparableObject<T>, b: T): number;
 function compare<T> (a: T, b: ComparableObject<T>): number;
 function compare<T extends Primitive> (a: T, b: T): CompareResult;
-function compare (a: any, b: any): CompareResult
+function compare (a: unknown, b: unknown): CompareResult
 {
 	if(a && type.hasMember<ComparableObject<unknown>>(a, COMPARE_TO)) return a.compareTo(b);
 	// If a has compareTo, use it.
 	else if(b && type.hasMember<ComparableObject<unknown>>(b, COMPARE_TO)) return -b.compareTo(a); // a doesn't have compareTo? check if b does and invert.
 
-	return comparePrimitives(a, b);
+	return comparePrimitives<any>(a, b);
 }
 
 namespace compare
@@ -42,9 +42,9 @@ namespace compare
 	export function compareInverted<T> (a: ComparableObject<T>, b: T): number;
 	export function compareInverted<T> (a: T, b: ComparableObject<T>): number;
 	export function compareInverted<T extends Primitive> (a: T, b: T): CompareResult;
-	export function compareInverted (a: any, b: any): CompareResult
+	export function compareInverted (a: unknown, b: unknown): CompareResult
 	{
-		return -compare(a, b);
+		return -compare<any>(a, b);
 	}
 
 	export const primitives = comparePrimitives;

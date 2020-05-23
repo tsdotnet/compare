@@ -19,8 +19,8 @@ import areEqual from './areEqual';
  * @returns {boolean}
  */
 export default function areEquivalentObjects (
-	a: any,
-	b: any,
+	a: unknown,
+	b: unknown,
 	nullEquivalency: boolean = true,
 	extraDepth: number       = 0): boolean {
 	// Take a step by step approach to ensure efficiency.
@@ -49,7 +49,7 @@ export default function areEquivalentObjects (
 		for(let i = 0; i<len; i++)
 		{
 			const key = aKeys[i];
-			if(key!==bKeys[i] || !areEqual(a[key], b[key])) return false;
+			if(key!==bKeys[i] || !areEqual((a as any)[key], (a as any)[key])) return false;
 		}
 
 		// Doesn't track circular references but allows for controlling the amount of recursion.
@@ -57,7 +57,7 @@ export default function areEquivalentObjects (
 		{
 			for(const key of aKeys)
 			{
-				if(!areEquivalentObjects(a[key], b[key], nullEquivalency, extraDepth - 1)) return false;
+				if(!areEquivalentObjects((a as any)[key], (a as any)[key], nullEquivalency, extraDepth - 1)) return false;
 			}
 		}
 

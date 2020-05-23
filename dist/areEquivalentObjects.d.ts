@@ -14,4 +14,4 @@
  * @param extraDepth
  * @returns {boolean}
  */
-export default function areEquivalentObjects(a: any, b: any, nullEquivalency?: boolean, extraDepth?: number): boolean;
+export default function areEquivalentObjects(a: unknown, b: unknown, nullEquivalency?: boolean, extraDepth?: number): boolean;

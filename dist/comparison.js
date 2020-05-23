@@ -10,6 +10,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
 const comparePrimitives_1 = tslib_1.__importDefault(require("./comparePrimitives"));
+/* eslint-disable @typescript-eslint/ban-types */
 var comparison;
 (function (comparison_1) {
     /**
@@ -41,13 +42,9 @@ var comparison;
     }
     comparison_1.fromKey = fromKey;
     function fromKeys(keys) {
-        if (keys instanceof Array)
-            return join(keys.map(k => fromKey(k)));
-        return join(Object
-            .keys(keys)
-            .map(k => 
-        // @ts-ignore
-        fromKey(k, keys[k])));
+        return keys instanceof Array
+            ? join(keys.map(k => fromKey(k)))
+            : join(Object.keys(keys).map(k => fromKey(k, keys[k])));
     }
     comparison_1.fromKeys = fromKeys;
     /**
@@ -66,6 +63,7 @@ var comparison;
         };
     }
     comparison_1.join = join;
+    // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
     function from(orderBy) {
         if (typeof orderBy === 'string')
             return fromKey(orderBy);
