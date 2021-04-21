@@ -6,4 +6,5 @@
  * @packageDocumentation
  * @module compare
  */
+export {};
 //# sourceMappingURL=EqualityOperator.js.map

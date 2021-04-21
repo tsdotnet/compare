@@ -1,7 +1,7 @@
 dependencies:
   '@tsdotnet/common-interfaces': 1.0.4
-  '@tsdotnet/type': 1.0.8
-  tslib: 2.0.0
+  '@tsdotnet/type': 1.0.11
+  tslib: 2.2.0
 devDependencies:
   '@types/chai': 4.2.16
   '@types/mocha': 8.2.2
@@ -266,13 +266,13 @@ packages:
     dev: false
     resolution:
       integrity: sha512-/LngZd3+wOlPw5VdQMxB+QNLuVH+9QsqBD+RZyKEKDhENP36vPhsTGbvA7bFNITnN1AqPy/Ih+x8A+jCYUhUgA==
-  /@tsdotnet/type/1.0.8:
+  /@tsdotnet/type/1.0.11:
     dependencies:
       '@tsdotnet/common-interfaces': 1.0.4
-      tslib: 2.0.0
+      tslib: 2.2.0
     dev: false
     resolution:
-      integrity: sha512-WM2L08BzBr2nD+m9YeNSrQsX5xw5TWuki+fbNDPkVPIMw8hFovhM65MQcFKIQAuHMZXqhFxBd/EoFvn28aBESw==
+      integrity: sha512-oD+5+aTyU7DNvkVyruIzeYcdy9xGsKOdd/7JbRYp16/xKluLWx8L2qcoXzr1t1P5rokTOblEHldUiPYPauFkVg==
   /@types/chai/4.2.16:
     dev: true
     resolution:
@@ -2899,10 +2899,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-i/6DQjL8Xf3be4K/E6Wgpekn5Qasl1usyw++dAA35Ue5orEn65VIxOA+YvNNl9HV3qv70T7CNwjODHZrLwvd1Q==
-  /tslib/2.0.0:
+  /tslib/2.2.0:
     dev: false
     resolution:
-      integrity: sha512-lTqkx847PI7xEDYJntxZH89L2/aXInsyF2luSafe/+0fHOMjlBNXdH6th7f70qxLDhul7KZK0zC8V5ZIyHl0/g==
+      integrity: sha512-gS9GVHRU+RGn5KQM2rllAlR3dU6m7AcpJKdtH8gFvQiC4Otgk98XnmMU+nZenHt/+VhnBPWwgrJsyrdcw6i23w==
   /tsutils/3.17.1_typescript@4.2.4:
     dependencies:
       tslib: 1.13.0
@@ -3223,7 +3223,7 @@ packages:
       integrity: sha512-Ux4ygGWsu2c7isFWe8Yu1YluJmqVhxqK2cLXNQA5AcC3QfbGNpM7fu0Y8b/z16pXLnFxZYvWhd3fhBY9DLmC6Q==
 specifiers:
   '@tsdotnet/common-interfaces': ^1.0.4
-  '@tsdotnet/type': ^1.0.8
+  '@tsdotnet/type': ^1.0.11
   '@types/chai': ^4.2.16
   '@types/mocha': ^8.2.2
   '@typescript-eslint/eslint-plugin': ^4.22.0
@@ -3240,7 +3240,7 @@ specifiers:
   nyc: ^15.1.0
   rimraf: ^3.0.2
   ts-node: ^9.1.1
-  tslib: ^2.0.0
+  tslib: ^2.2.0
   typedoc: ^0.20.35
   typedoc-plugin-external-module-name: 3.1.0
   typedoc-plugin-nojekyll: ^1.0.1
