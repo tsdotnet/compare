@@ -7,4 +7,5 @@
 Utility for common comparison functions including sorting and type checking.
 
 ## Docs
+
 [tsdotnet.github.io/compare](https://tsdotnet.github.io/compare/modules/compare.html)
