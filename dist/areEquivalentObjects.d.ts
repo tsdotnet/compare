@@ -3,10 +3,6 @@
  * Licensing: MIT
  */
 /**
- * @packageDocumentation
- * @module compare
- */
-/**
  * Determines if two primitives are equal or if two objects have the same key/value combinations.
  * @param a
  * @param b

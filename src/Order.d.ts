@@ -1,7 +1,4 @@
-/**
- * @packageDocumentation
- * @module compare
- */
+
 
 /**
  * Enum representation of sorting order.

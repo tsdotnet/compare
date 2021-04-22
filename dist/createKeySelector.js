@@ -3,10 +3,6 @@
  * @author electricessence / https://github.com/electricessence/
  * Licensing: MIT
  */
-/**
- * @packageDocumentation
- * @module compare
- */
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * Creates a selector that iterates the keys in order provided.

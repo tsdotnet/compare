@@ -2,10 +2,6 @@
  * @author electricessence / https://github.com/electricessence/
  * Licensing: MIT
  */
-/**
- * @packageDocumentation
- * @module compare
- */
 import { Selector } from '@tsdotnet/common-interfaces';
 declare type KeyOf<T> = keyof T;
 declare type Keys<T> = KeyOf<T>[];

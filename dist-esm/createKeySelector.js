@@ -3,10 +3,6 @@
  * Licensing: MIT
  */
 /**
- * @packageDocumentation
- * @module compare
- */
-/**
  * Creates a selector that iterates the keys in order provided.
  * @param keys The keys desired.
  * @return The selector function.

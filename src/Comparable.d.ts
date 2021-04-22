@@ -3,10 +3,7 @@
  * Based upon .NET source.
  * Licensing: MIT
  */
-/**
- * @packageDocumentation
- * @module compare
- */
+
 
 export interface ComparableObject<T>
 {
