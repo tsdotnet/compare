@@ -1,6 +1,6 @@
 dependencies:
-  '@tsdotnet/common-interfaces': 1.0.4
-  '@tsdotnet/type': 1.0.11
+  '@tsdotnet/common-interfaces': link:../common-interfaces
+  '@tsdotnet/type': link:../type
   tslib: 2.2.0
 devDependencies:
   '@types/chai': 4.2.18
@@ -278,17 +278,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-FTgBI767POY/lKNDNbIzgAX6miIDBs6NTCbdlDb8TrWovHsSvaVIZDlTqym29C6UqhzwcJx4CYr+AlrMywA0cA==
-  /@tsdotnet/common-interfaces/1.0.4:
-    dev: false
-    resolution:
-      integrity: sha512-/LngZd3+wOlPw5VdQMxB+QNLuVH+9QsqBD+RZyKEKDhENP36vPhsTGbvA7bFNITnN1AqPy/Ih+x8A+jCYUhUgA==
-  /@tsdotnet/type/1.0.11:
-    dependencies:
-      '@tsdotnet/common-interfaces': 1.0.4
-      tslib: 2.2.0
-    dev: false
-    resolution:
-      integrity: sha512-oD+5+aTyU7DNvkVyruIzeYcdy9xGsKOdd/7JbRYp16/xKluLWx8L2qcoXzr1t1P5rokTOblEHldUiPYPauFkVg==
   /@types/chai/4.2.18:
     dev: true
     resolution:
