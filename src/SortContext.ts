@@ -10,7 +10,7 @@ import Order from './Order';
  * A class for helping in complex sorting patterns.
  */
 export default class SortContext<T>
-	implements Comparer<T>
+implements Comparer<T>
 {
 	/**
 	 * Constructs a SortContext.

@@ -5,8 +5,8 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
-const compare_1 = tslib_1.__importDefault(require("./compare"));
-const SortContext_1 = tslib_1.__importDefault(require("./SortContext"));
+const compare_1 = (0, tslib_1.__importDefault)(require("./compare"));
+const SortContext_1 = (0, tslib_1.__importDefault)(require("./SortContext"));
 /**
  * A class for helping in complex sorting patterns using a key selector.
  */
@@ -27,7 +27,7 @@ class KeySortedContext extends SortContext_1.default {
         if (!ks)
             return super.compare(a, b);
         // We force <any> here since it can be a primitive or Comparable<any>
-        const d = compare_1.default(ks(a), ks(b));
+        const d = (0, compare_1.default)(ks(a), ks(b));
         if (d === 0 && this._next)
             return this._next.compare(a, b);
         return this._order * d;

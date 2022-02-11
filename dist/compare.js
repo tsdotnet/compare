@@ -5,8 +5,8 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
-const type_1 = tslib_1.__importDefault(require("@tsdotnet/type"));
-const comparePrimitives_1 = tslib_1.__importDefault(require("./comparePrimitives"));
+const type_1 = (0, tslib_1.__importDefault)(require("@tsdotnet/type"));
+const comparePrimitives_1 = (0, tslib_1.__importDefault)(require("./comparePrimitives"));
 const COMPARE_TO = 'compareTo';
 function compare(a, b) {
     if (a && type_1.default.hasMember(a, COMPARE_TO))
@@ -14,7 +14,7 @@ function compare(a, b) {
     // If a has compareTo, use it.
     else if (b && type_1.default.hasMember(b, COMPARE_TO))
         return -b.compareTo(a); // a doesn't have compareTo? check if b does and invert.
-    return comparePrimitives_1.default(a, b);
+    return (0, comparePrimitives_1.default)(a, b);
 }
 (function (compare) {
     function compareInverted(a, b) {
