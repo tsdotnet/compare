@@ -2,7 +2,7 @@ lockfileVersion: 5.3
 
 specifiers:
   '@tsdotnet/common-interfaces': ^1.0.4
-  '@tsdotnet/type': ^1.0.12
+  '@tsdotnet/type': ^1.0.13
   '@types/chai': ^4.3.0
   '@types/mocha': ^9.1.0
   '@types/node': ^17.0.17
@@ -26,7 +26,7 @@ specifiers:
 
 dependencies:
   '@tsdotnet/common-interfaces': 1.0.4
-  '@tsdotnet/type': 1.0.12
+  '@tsdotnet/type': 1.0.13
   tslib: 2.3.1
 
 devDependencies:
@@ -322,8 +322,8 @@ packages:
     resolution: {integrity: sha512-/LngZd3+wOlPw5VdQMxB+QNLuVH+9QsqBD+RZyKEKDhENP36vPhsTGbvA7bFNITnN1AqPy/Ih+x8A+jCYUhUgA==}
     dev: false
 
-  /@tsdotnet/type/1.0.12:
-    resolution: {integrity: sha512-L4BLgnNdI7+RNGkoBTw/iXsxITcwOF724t00nxXwjkcTpbT2RWg5mPXVGcaf+5mj6pOD4ntZqMbH8JkPZ7cbsQ==}
+  /@tsdotnet/type/1.0.13:
+    resolution: {integrity: sha512-REx8qtNKYaLQSjjrJlsrpDL+V0CkufN3kDkrJmf3UDxOUgpEayKmHfcQQ26LEcSOflXEkI30WXfzDnsDqS87OA==}
     dependencies:
       '@tsdotnet/common-interfaces': 1.0.4
       tslib: 2.3.1
