@@ -51,8 +51,8 @@ namespace comparison
 	 * @param {{[key]: Order}} keys
 	 * @return {Comparison<T>}
 	 */
-	export function fromKeys<T extends object> (keys: (keyof T)[]): Comparison<T>
-	export function fromKeys<T extends object> (keys: { [P in keyof T]?: Order }): Comparison<T>
+	export function fromKeys<T extends object> (keys: (keyof T)[]): Comparison<T>;
+	export function fromKeys<T extends object> (keys: { [P in keyof T]?: Order }): Comparison<T>;
 	export function fromKeys<T extends Record<PropertyKey, unknown>> (keys: (keyof T)[] | { [P in keyof T]?: Order }): Comparison<T>
 	{
 		return keys instanceof Array
@@ -83,9 +83,9 @@ namespace comparison
 	 * @return {Comparison<T>}
 	 */
 	export function from<T> (
-		orderBy: OrderBySelector<T> | OrderByComparison<T> | [OrderByComparison<T> | OrderBySelector<T>]): Comparison<T>
+		orderBy: OrderBySelector<T> | OrderByComparison<T> | [OrderByComparison<T> | OrderBySelector<T>]): Comparison<T>;
 	export function from<T extends object> (
-		orderBy: OrderByKey<T> | OrderBySelector<T> | OrderByComparison<T> | [OrderByKey<T> | OrderBySelector<T> | OrderByComparison<T>]): Comparison<T>
+		orderBy: OrderByKey<T> | OrderBySelector<T> | OrderByComparison<T> | [OrderByKey<T> | OrderBySelector<T> | OrderByComparison<T>]): Comparison<T>;
 	// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 	export function from (orderBy: any): Comparison<any>
 	{
