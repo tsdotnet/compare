@@ -5,7 +5,7 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
-const comparePrimitives_1 = (0, tslib_1.__importDefault)(require("./comparePrimitives"));
+const comparePrimitives_1 = tslib_1.__importDefault(require("./comparePrimitives"));
 /* eslint-disable @typescript-eslint/ban-types */
 var comparison;
 (function (comparison_1) {
@@ -15,7 +15,7 @@ var comparison;
      * @param {Order} order
      * @return {Comparison<T>}
      */
-    function fromSelector(selector, order = 1 /* Ascending */) {
+    function fromSelector(selector, order = 1 /* Order.Ascending */) {
         if (order !== -1)
             order = 1;
         return function (a, b) {
@@ -29,7 +29,7 @@ var comparison;
      * @param {Order} order
      * @return {Comparison<T>}
      */
-    function fromKey(key, order = 1 /* Ascending */) {
+    function fromKey(key, order = 1 /* Order.Ascending */) {
         if (order !== -1)
             order = 1;
         return function (a, b) {

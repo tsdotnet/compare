@@ -5,7 +5,7 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
-const areEqual_1 = (0, tslib_1.__importDefault)(require("./areEqual"));
+const areEqual_1 = tslib_1.__importDefault(require("./areEqual"));
 /**
  * Compares two comparable objects or primitives.
  * @param a
@@ -13,12 +13,12 @@ const areEqual_1 = (0, tslib_1.__importDefault)(require("./areEqual"));
  */
 function comparePrimitives(a, b) {
     if ((0, areEqual_1.default)(a, b))
-        return 0 /* Equal */;
+        return 0 /* CompareResult.Equal */;
     // Allow for special inequality..
     if (a > b || a === 0 && b == 0 || a === null && b === undefined)
-        return 1 /* Greater */;
+        return 1 /* CompareResult.Greater */;
     if (b > a || b === 0 && a == 0 || b === null && a === undefined)
-        return -1 /* Less */;
+        return -1 /* CompareResult.Less */;
     return NaN;
 }
 (function (comparePrimitives) {

@@ -15,7 +15,7 @@ export default class KeySortedContext extends SortContext {
      * @param {Order} order Ascending or Descending.
      * @param {Comparison} comparer The comparison function.  The default handles most cases.
      */
-    constructor(next, keySelector, order = 1 /* Ascending */, comparer = compare) {
+    constructor(next, keySelector, order = 1 /* Order.Ascending */, comparer = compare) {
         super(next, comparer, order);
         this._keySelector = keySelector;
     }

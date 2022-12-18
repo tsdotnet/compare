@@ -12,7 +12,7 @@ var comparison;
      * @param {Order} order
      * @return {Comparison<T>}
      */
-    function fromSelector(selector, order = 1 /* Ascending */) {
+    function fromSelector(selector, order = 1 /* Order.Ascending */) {
         if (order !== -1)
             order = 1;
         return function (a, b) {
@@ -26,7 +26,7 @@ var comparison;
      * @param {Order} order
      * @return {Comparison<T>}
      */
-    function fromKey(key, order = 1 /* Ascending */) {
+    function fromKey(key, order = 1 /* Order.Ascending */) {
         if (order !== -1)
             order = 1;
         return function (a, b) {

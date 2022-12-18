@@ -10,12 +10,12 @@ import areEqual from './areEqual';
  */
 function comparePrimitives(a, b) {
     if (areEqual(a, b))
-        return 0 /* Equal */;
+        return 0 /* CompareResult.Equal */;
     // Allow for special inequality..
     if (a > b || a === 0 && b == 0 || a === null && b === undefined)
-        return 1 /* Greater */;
+        return 1 /* CompareResult.Greater */;
     if (b > a || b === 0 && a == 0 || b === null && a === undefined)
-        return -1 /* Less */;
+        return -1 /* CompareResult.Less */;
     return NaN;
 }
 (function (comparePrimitives) {

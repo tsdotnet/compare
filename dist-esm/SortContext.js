@@ -12,7 +12,7 @@ export default class SortContext {
      * @param {Comparison} _comparer The comparison function that will differentiate between items.
      * @param {Order} _order Ascending or Descending.
      */
-    constructor(_next, _comparer, _order = 1 /* Ascending */) {
+    constructor(_next, _comparer, _order = 1 /* Order.Ascending */) {
         this._next = _next;
         this._comparer = _comparer;
         this._order = _order;

@@ -3,9 +3,9 @@
  * Licensing: MIT
  */
 import { Selector } from '@tsdotnet/common-interfaces';
-declare type KeyOf<T> = keyof T;
-declare type Keys<T> = KeyOf<T>[];
-declare type ValueOf<T> = T[keyof T];
+type KeyOf<T> = keyof T;
+type Keys<T> = KeyOf<T>[];
+type ValueOf<T> = T[keyof T];
 /**
  * Creates a selector that iterates the keys in order provided.
  * @param keys The keys desired.
