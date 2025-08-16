@@ -29,7 +29,6 @@ function compare (a: unknown, b: unknown): CompareResult
 	return comparePrimitives<any>(a, b);
 }
 
-
 namespace compare
 {
 	/**

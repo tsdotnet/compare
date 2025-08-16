@@ -8,7 +8,8 @@ export default tseslint.config(
 		rules: {
 			"semi": ["warn", "always"],
 			"indent": ["warn", "tab", { "SwitchCase": 1 }],
-			"@typescript-eslint/no-explicit-any": "off"
+			"@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/no-namespace": "off",
 		},
 		files: ['src/**/*.ts'],
 		languageOptions: {
