@@ -10,8 +10,7 @@ import CompareResult from './CompareResult';
 import Order from './Order';
 import {OrderByComparison, OrderByKey, OrderBySelector} from './OrderBy';
 
-/* eslint-disable @typescript-eslint/ban-types */
-
+ 
 namespace comparison
 {
 	/**
@@ -42,6 +41,7 @@ namespace comparison
 	{
 		if(order!== -1) order = 1;
 		return function(a: T, b: T): CompareResult {
+			 
 			return comparePrimitives(a[key] as any, b[key] as any)*order!;
 		};
 	}
@@ -86,7 +86,7 @@ namespace comparison
 		orderBy: OrderBySelector<T> | OrderByComparison<T> | [OrderByComparison<T> | OrderBySelector<T>]): Comparison<T>;
 	export function from<T extends object> (
 		orderBy: OrderByKey<T> | OrderBySelector<T> | OrderByComparison<T> | [OrderByKey<T> | OrderBySelector<T> | OrderByComparison<T>]): Comparison<T>;
-	// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+	 
 	export function from (orderBy: any): Comparison<any>
 	{
 		if(typeof orderBy==='string') return fromKey(orderBy);

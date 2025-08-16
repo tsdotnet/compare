@@ -27,7 +27,6 @@ export default function areSequencesEqual<T> (
 		aI = a[Symbol.iterator](),
 		bI = b[Symbol.iterator]();
 
-	// eslint-disable-next-line no-constant-condition
 	while(true)
 	{
 		const aN = aI.next(), bN = bI.next();

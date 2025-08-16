@@ -4,6 +4,7 @@
  * Licensing: MIT
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = createKeySelector;
 /**
  * Creates a selector that iterates the keys in order provided.
  * @param keys The keys desired.
@@ -16,5 +17,4 @@ function createKeySelector(...keys) {
         }
     };
 }
-exports.default = createKeySelector;
 //# sourceMappingURL=createKeySelector.js.map

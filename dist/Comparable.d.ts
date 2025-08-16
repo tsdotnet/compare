@@ -10,6 +10,7 @@ export interface ComparableObject<T>
 	compareTo (other: T): number;
 }
 
+ 
 export declare type Comparable = string | number | boolean | ComparableObject<any>;
 
 export interface Comparer<T>

@@ -4,6 +4,7 @@
  * Licensing: MIT
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = areEquivalentObjects;
 const tslib_1 = require("tslib");
 const type_1 = tslib_1.__importDefault(require("@tsdotnet/type"));
 const areEqual_1 = tslib_1.__importDefault(require("./areEqual"));
@@ -51,5 +52,4 @@ function areEquivalentObjects(a, b, nullEquivalency = true, extraDepth = 0) {
     }
     return false;
 }
-exports.default = areEquivalentObjects;
 //# sourceMappingURL=areEquivalentObjects.js.map

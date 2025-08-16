@@ -40,6 +40,7 @@ export default class KeySortedContext<T, TKey extends Comparable>
 		const ks = this._keySelector;
 		if(!ks) return super.compare(a, b);
 		// We force <any> here since it can be a primitive or Comparable<any>
+		 
 		const d = compare(ks(a) as any, ks(b) as any);
 		if(d===0 && this._next) return this._next.compare(a, b);
 		return this._order*d;

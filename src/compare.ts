@@ -25,8 +25,10 @@ function compare (a: unknown, b: unknown): CompareResult
 	// If a has compareTo, use it.
 	else if(b && type.hasMember<ComparableObject<unknown>>(b, COMPARE_TO)) return -b.compareTo(a); // a doesn't have compareTo? check if b does and invert.
 
+	 
 	return comparePrimitives<any>(a, b);
 }
+
 
 namespace compare
 {
@@ -40,6 +42,7 @@ namespace compare
 	export function compareInverted<T extends Primitive> (a: T, b: T): CompareResult;
 	export function compareInverted (a: unknown, b: unknown): CompareResult
 	{
+		 
 		return -compare<any>(a, b);
 	}
 

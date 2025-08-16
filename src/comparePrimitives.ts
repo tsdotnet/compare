@@ -24,6 +24,7 @@ function comparePrimitives<T extends Primitive> (a: T, b: T): CompareResult
 	return NaN;
 }
 
+ 
 namespace comparePrimitives
 {
 	/**

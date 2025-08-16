@@ -4,6 +4,7 @@
  * Licensing: MIT
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = areSequencesEqual;
 const index_1 = require("./index");
 /**
  * Compares two sequences for equality.
@@ -22,7 +23,6 @@ function areSequencesEqual(a, b, equalityComparer = index_1.areEqual) {
         && a.length != b.length)
         return false;
     const aI = a[Symbol.iterator](), bI = b[Symbol.iterator]();
-    // eslint-disable-next-line no-constant-condition
     while (true) {
         const aN = aI.next(), bN = bI.next();
         if (aN.done && bN.done)
@@ -33,5 +33,4 @@ function areSequencesEqual(a, b, equalityComparer = index_1.areEqual) {
             return false;
     }
 }
-exports.default = areSequencesEqual;
 //# sourceMappingURL=areSequencesEqual.js.map

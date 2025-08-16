@@ -19,7 +19,6 @@ export type OrderBySelector<T> = Selector<T, Primitive> | OrderByOption & {
 	selector: Selector<T, Primitive>;
 };
 
-// eslint-disable-next-line @typescript-eslint/ban-types
 export type OrderByKey<T extends object> = keyof T | OrderByOption & {
 	key: keyof T;
 };

@@ -20,7 +20,6 @@ export default function areSequencesEqual(a, b, equalityComparer = areEqual) {
         && a.length != b.length)
         return false;
     const aI = a[Symbol.iterator](), bI = b[Symbol.iterator]();
-    // eslint-disable-next-line no-constant-condition
     while (true) {
         const aN = aI.next(), bN = bI.next();
         if (aN.done && bN.done)

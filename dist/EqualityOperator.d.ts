@@ -7,7 +7,7 @@ export declare const enum EqualityOperator {
      * ==
      * @type {number}
      */
-    Equality = 0,
+    Equality = 0,// (false)
     /**
      * === (strict)
      * @type {number}

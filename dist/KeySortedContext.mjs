@@ -8,6 +8,7 @@ import SortContext from './SortContext';
  * A class for helping in complex sorting patterns using a key selector.
  */
 export default class KeySortedContext extends SortContext {
+    _keySelector;
     /**
      * Constructs a KeySortedContext.
      * @param {Comparer | null} next If provided (not null) any items that are considered equal will use this comparer to decided their order.

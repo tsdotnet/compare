@@ -8,6 +8,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * A class for helping in complex sorting patterns.
  */
 class SortContext {
+    _next;
+    _comparer;
+    _order;
     /**
      * Constructs a SortContext.
      * @param {Comparer | null} _next If provided (not null) any items that are considered equal will use this comparer to decided their order.
@@ -26,6 +29,7 @@ class SortContext {
     get order() {
         return this._order;
     }
+    _comparison;
     /**
      * A scope safe comparison function (delegate).
      * @return {Comparison}

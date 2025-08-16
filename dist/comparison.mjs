@@ -3,7 +3,6 @@
  * Licensing: MIT
  */
 import comparePrimitives from './comparePrimitives';
-/* eslint-disable @typescript-eslint/ban-types */
 var comparison;
 (function (comparison_1) {
     /**
@@ -56,7 +55,6 @@ var comparison;
         };
     }
     comparison_1.join = join;
-    // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
     function from(orderBy) {
         if (typeof orderBy === 'string')
             return fromKey(orderBy);

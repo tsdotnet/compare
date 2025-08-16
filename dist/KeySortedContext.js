@@ -11,6 +11,7 @@ const SortContext_1 = tslib_1.__importDefault(require("./SortContext"));
  * A class for helping in complex sorting patterns using a key selector.
  */
 class KeySortedContext extends SortContext_1.default {
+    _keySelector;
     /**
      * Constructs a KeySortedContext.
      * @param {Comparer | null} next If provided (not null) any items that are considered equal will use this comparer to decided their order.
