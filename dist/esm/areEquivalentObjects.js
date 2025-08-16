@@ -1,13 +1,9 @@
-"use strict";
 /*!
  * @author electricessence / https://github.com/electricessence/
  * Licensing: MIT
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = areEquivalentObjects;
-const tslib_1 = require("tslib");
-const type_1 = tslib_1.__importDefault(require("@tsdotnet/type"));
-const areEqual_1 = tslib_1.__importDefault(require("./areEqual"));
+import type from '@tsdotnet/type';
+import areEqual from './areEqual';
 /**
  * Determines if two primitives are equal or if two objects have the same key/value combinations.
  * @param a
@@ -16,11 +12,11 @@ const areEqual_1 = tslib_1.__importDefault(require("./areEqual"));
  * @param extraDepth
  * @returns {boolean}
  */
-function areEquivalentObjects(a, b, nullEquivalency = true, extraDepth = 0) {
+export default function areEquivalentObjects(a, b, nullEquivalency = true, extraDepth = 0) {
     // Take a step by step approach to ensure efficiency.
-    if ((0, areEqual_1.default)(a, b))
+    if (areEqual(a, b))
         return true;
-    const aKeys = type_1.default.isObject(a) && Object.keys(a), bKeys = type_1.default.isObject(b) && Object.keys(b);
+    const aKeys = type.isObject(a) && Object.keys(a), bKeys = type.isObject(b) && Object.keys(b);
     if (a == null || b == null) {
         if (!nullEquivalency)
             return false;
@@ -38,7 +34,7 @@ function areEquivalentObjects(a, b, nullEquivalency = true, extraDepth = 0) {
         bKeys.sort();
         for (let i = 0; i < len; i++) {
             const key = aKeys[i];
-            if (key !== bKeys[i] || !(0, areEqual_1.default)(a[key], a[key]))
+            if (key !== bKeys[i] || !areEqual(a[key], a[key]))
                 return false;
         }
         // Doesn't track circular references but allows for controlling the amount of recursion.

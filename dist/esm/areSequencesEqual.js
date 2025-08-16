@@ -1,11 +1,8 @@
-"use strict";
 /*!
  * @author electricessence / https://github.com/electricessence/
  * Licensing: MIT
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = areSequencesEqual;
-const index_1 = require("./index");
+import { areEqual } from './index';
 /**
  * Compares two sequences for equality.
  * @param {Iterable} a
@@ -13,7 +10,7 @@ const index_1 = require("./index");
  * @param {EqualityComparison} equalityComparer
  * @return {boolean}
  */
-function areSequencesEqual(a, b, equalityComparer = index_1.areEqual) {
+export default function areSequencesEqual(a, b, equalityComparer = areEqual) {
     if (a === b)
         return true;
     if (a == null || b == null)

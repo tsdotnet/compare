@@ -1,13 +1,11 @@
-"use strict";
 /*!
  * @author electricessence / https://github.com/electricessence/
  * Licensing: MIT
  */
-Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * A class for helping in complex sorting patterns.
  */
-class SortContext {
+export default class SortContext {
     _next;
     _comparer;
     _order;
@@ -66,5 +64,4 @@ class SortContext {
         return this._order * d;
     }
 }
-exports.default = SortContext;
 //# sourceMappingURL=SortContext.js.map

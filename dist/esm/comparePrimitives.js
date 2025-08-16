@@ -1,18 +1,15 @@
-"use strict";
 /*!
  * @author electricessence / https://github.com/electricessence/
  * Licensing: MIT
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-const tslib_1 = require("tslib");
-const areEqual_1 = tslib_1.__importDefault(require("./areEqual"));
+import areEqual from './areEqual';
 /**
  * Compares two comparable objects or primitives.
  * @param a
  * @param b
  */
 function comparePrimitives(a, b) {
-    if ((0, areEqual_1.default)(a, b))
+    if (areEqual(a, b))
         return 0 /* CompareResult.Equal */;
     // Allow for special inequality..
     if (a > b || a === 0 && b == 0 || a === null && b === undefined)
@@ -32,5 +29,5 @@ function comparePrimitives(a, b) {
     }
     comparePrimitives.inverted = inverted;
 })(comparePrimitives || (comparePrimitives = {}));
-exports.default = comparePrimitives;
+export default comparePrimitives;
 //# sourceMappingURL=comparePrimitives.js.map

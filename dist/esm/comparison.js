@@ -1,11 +1,8 @@
-"use strict";
 /*!
  * @author electricessence / https://github.com/electricessence/
  * Licensing: MIT
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-const tslib_1 = require("tslib");
-const comparePrimitives_1 = tslib_1.__importDefault(require("./comparePrimitives"));
+import comparePrimitives from './comparePrimitives';
 var comparison;
 (function (comparison_1) {
     /**
@@ -18,7 +15,7 @@ var comparison;
         if (order !== -1)
             order = 1;
         return function (a, b) {
-            return (0, comparePrimitives_1.default)(selector(a), selector(b)) * order;
+            return comparePrimitives(selector(a), selector(b)) * order;
         };
     }
     comparison_1.fromSelector = fromSelector;
@@ -32,7 +29,7 @@ var comparison;
         if (order !== -1)
             order = 1;
         return function (a, b) {
-            return (0, comparePrimitives_1.default)(a[key], b[key]) * order;
+            return comparePrimitives(a[key], b[key]) * order;
         };
     }
     comparison_1.fromKey = fromKey;
@@ -93,5 +90,5 @@ var comparison;
     }
     comparison_1.invert = invert;
 })(comparison || (comparison = {}));
-exports.default = comparison;
+export default comparison;
 //# sourceMappingURL=comparison.js.map
