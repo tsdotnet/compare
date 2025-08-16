@@ -2,7 +2,7 @@
  * @author electricessence / https://github.com/electricessence/
  * Licensing: MIT
  */
-import { Primitive, Selector } from '@tsdotnet/common-interfaces';
+import type { Primitive, Selector } from '@tsdotnet/common-interfaces';
 import { Comparison } from './Comparable';
 import Order from './Order';
 import { OrderByComparison, OrderByKey, OrderBySelector } from './OrderBy';

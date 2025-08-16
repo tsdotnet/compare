@@ -2,7 +2,7 @@
  * @author electricessence / https://github.com/electricessence/
  * Licensing: MIT
  */
-import { Selector } from '@tsdotnet/common-interfaces';
+import type { Selector } from '@tsdotnet/common-interfaces';
 type KeyOf<T> = keyof T;
 type Keys<T> = KeyOf<T>[];
 type ValueOf<T> = T[keyof T];

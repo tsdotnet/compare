@@ -3,7 +3,7 @@
  * Licensing: MIT
  */
 
-import {Primitive} from '@tsdotnet/common-interfaces';
+import type {Primitive} from '@tsdotnet/common-interfaces';
 import type from '@tsdotnet/type';
 import {ComparableObject} from './Comparable';
 import comparePrimitives from './comparePrimitives';

@@ -2,7 +2,7 @@
  * @author electricessence / https://github.com/electricessence/
  * Licensing: MIT
  */
-import { Primitive } from '@tsdotnet/common-interfaces';
+import type { Primitive } from '@tsdotnet/common-interfaces';
 import { ComparableObject } from './Comparable';
 import comparePrimitives from './comparePrimitives';
 import CompareResult from './CompareResult';

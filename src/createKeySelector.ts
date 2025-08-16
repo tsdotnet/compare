@@ -3,7 +3,7 @@
  * Licensing: MIT
  */
 
-import {Selector} from '@tsdotnet/common-interfaces';
+import type {Selector} from '@tsdotnet/common-interfaces';
 
 type KeyOf<T> = keyof T;
 type Keys<T> = KeyOf<T>[];

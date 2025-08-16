@@ -3,7 +3,7 @@
  * Licensing: MIT
  */
 
-import {Primitive, Selector} from '@tsdotnet/common-interfaces';
+import type {Primitive, Selector} from '@tsdotnet/common-interfaces';
 import {Comparison} from './Comparable';
 import comparePrimitives from './comparePrimitives';
 import CompareResult from './CompareResult';

@@ -2,7 +2,7 @@
  * @author electricessence / https://github.com/electricessence/
  * Licensing: MIT
  */
-import { Selector } from '@tsdotnet/common-interfaces';
+import type { Selector } from '@tsdotnet/common-interfaces';
 import { Comparable, Comparer, Comparison } from './Comparable';
 import Order from './Order';
 import SortContext from './SortContext';

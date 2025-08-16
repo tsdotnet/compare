@@ -5,11 +5,11 @@ import areEqual from './areEqual';
 import areEquivalentObjects from './areEquivalent';
 import areEquivalent from './areEquivalent';
 import areSequencesEqual from './areSequencesEqual';
-import {Comparable, Comparison, EqualityComparison} from './Comparable';
+import type {Comparable, Comparison, EqualityComparison} from './Comparable';
 import compare from './compare';
-import CompareResult from './CompareResult';
+import type CompareResult from './CompareResult';
 import KeySortedContext from './KeySortedContext';
-import Order from './Order';
+import type Order from './Order';
 import SortContext from './SortContext';
 
 export {
