@@ -3,7 +3,12 @@
  * Licensing: MIT
  */
 
-
+/**
+ * Const enum for comparison result values providing compile-time optimization.
+ * Used internally for performance-critical operations.
+ * @readonly
+ * @enum {number}
+ */
 export const enum CompareResultValue
 {
 	Equal   = 0,
@@ -26,7 +31,7 @@ enum CompareResult
 /**
  * Union type that accepts both CompareResultValue and CompareResult for maximum flexibility.
  * This allows internal functions to accept either the const enum (for performance)
- * or the regular enum (for public API usage).
+ * or the regular enum (for public API usage), as well as raw numeric values.
  */
 export type CompareResultOrValue = CompareResultValue | CompareResult | 0 | 1 | -1;
 

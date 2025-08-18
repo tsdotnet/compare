@@ -3,11 +3,11 @@ import areEqual from './areEqual';
 import areEquivalentObjects from './areEquivalent';
 import areEquivalent from './areEquivalent';
 import areSequencesEqual from './areSequencesEqual';
-import type { Comparable, Comparison, EqualityComparison } from './Comparable';
+import type { Comparer, ComparableObject, Comparable, Comparison, EqualityComparison } from './Comparable';
 import compare from './compare';
 import CompareResult from './CompareResult';
 import KeySortedContext from './KeySortedContext';
-import Order from './Order';
+import Order, { type OrderOrValue } from './Order';
 import SortContext from './SortContext';
 import EqualityOperator from './EqualityOperator';
 
@@ -18,12 +18,14 @@ export {
 	areSequencesEqual,
 	compare,
 	typeUtil as type,
+	type Comparer,
+	type ComparableObject,
 	type Comparable,
 	type Comparison,
 	type EqualityComparison,
 	CompareResult,
 	EqualityOperator,
-	Order,
+	Order, OrderOrValue,
 	SortContext,
 	KeySortedContext
 };

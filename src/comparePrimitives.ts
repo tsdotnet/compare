@@ -8,9 +8,11 @@ import areEqual from './areEqual';
 import { CompareResultValue as CompareResult } from './CompareResult';
 
 /**
- * Compares two comparable objects or primitives.
- * @param a
- * @param b
+ * Compares two comparable primitive values.
+ * Returns -1, 0, or 1 based on the comparison result.
+ * @param a First value to compare
+ * @param b Second value to compare
+ * @returns CompareResult indicating the relationship between a and b
  */
 function comparePrimitives<T extends Primitive> (a: T, b: T): CompareResult
 {
