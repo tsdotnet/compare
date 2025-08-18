@@ -3,11 +3,11 @@
  * Licensing: MIT
  */
 
-import type {Primitive} from '@tsdotnet/common-interfaces';
+import type { Primitive } from '@tsdotnet/common-interfaces';
 import typeUtil from '@tsdotnet/type';
-import {type ComparableObject} from './Comparable';
+import { type ComparableObject } from './Comparable';
 import comparePrimitives from './comparePrimitives';
-import CompareResult from './CompareResult';
+import { type CompareResultValue as CompareResult } from './CompareResult';
 
 const COMPARE_TO = 'compareTo';
 
@@ -16,32 +16,28 @@ const COMPARE_TO = 'compareTo';
  * @param a
  * @param b
  */
-function compare<T> (a: ComparableObject<T>, b: T): number;
-function compare<T> (a: T, b: ComparableObject<T>): number;
-function compare<T extends Primitive> (a: T, b: T): CompareResult;
-function compare (a: unknown, b: unknown): CompareResult
-{
-	if(a && typeUtil.hasMember<ComparableObject<unknown>>(a, COMPARE_TO)) return a.compareTo(b);
+function compare<T>(a: ComparableObject<T>, b: T): number;
+function compare<T>(a: T, b: ComparableObject<T>): number;
+function compare<T extends Primitive>(a: T, b: T): CompareResult;
+function compare(a: unknown, b: unknown): CompareResult {
+	if (a && typeUtil.hasMember<ComparableObject<unknown>>(a, COMPARE_TO)) return a.compareTo(b);
 	// If a has compareTo, use it.
-	else if(b && typeUtil.hasMember<ComparableObject<unknown>>(b, COMPARE_TO)) return -b.compareTo(a); // a doesn't have compareTo? check if b does and invert.
+	else if (b && typeUtil.hasMember<ComparableObject<unknown>>(b, COMPARE_TO)) return -b.compareTo(a); // a doesn't have compareTo? check if b does and invert.
 
-	 
 	return comparePrimitives<any>(a, b);
 }
 
-namespace compare
-{
+namespace compare {
 	/**
 	 * Compares two comparable objects or primitives and inverts the sign of the result.
 	 * @param a
 	 * @param b
 	 */
-	export function compareInverted<T> (a: ComparableObject<T>, b: T): number;
-	export function compareInverted<T> (a: T, b: ComparableObject<T>): number;
-	export function compareInverted<T extends Primitive> (a: T, b: T): CompareResult;
-	export function compareInverted (a: unknown, b: unknown): CompareResult
-	{
-		 
+	export function compareInverted<T>(a: ComparableObject<T>, b: T): number;
+	export function compareInverted<T>(a: T, b: ComparableObject<T>): number;
+	export function compareInverted<T extends Primitive>(a: T, b: T): CompareResult;
+	export function compareInverted(a: unknown, b: unknown): CompareResult {
+
 		return -compare<any>(a, b);
 	}
 

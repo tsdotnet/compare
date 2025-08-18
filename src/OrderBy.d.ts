@@ -5,7 +5,7 @@
 
 import type {Primitive, Selector} from '@tsdotnet/common-interfaces';
 import type {Comparison} from './Comparable';
-import type Order from './Order';
+import type {OrderValue as Order} from './Order';
 
 export type OrderByOption = {
 	order?: Order;

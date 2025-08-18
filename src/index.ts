@@ -1,11 +1,9 @@
-
-
 import typeUtil from '@tsdotnet/type';
 import areEqual from './areEqual';
 import areEquivalentObjects from './areEquivalent';
 import areEquivalent from './areEquivalent';
 import areSequencesEqual from './areSequencesEqual';
-import type {Comparable, Comparison, EqualityComparison} from './Comparable';
+import type { Comparable, Comparison, EqualityComparison } from './Comparable';
 import compare from './compare';
 import CompareResult from './CompareResult';
 import KeySortedContext from './KeySortedContext';
@@ -20,10 +18,10 @@ export {
 	areSequencesEqual,
 	compare,
 	typeUtil as type,
-	Comparable,
+	type Comparable,
+	type Comparison,
+	type EqualityComparison,
 	CompareResult,
-	Comparison,
-	EqualityComparison,
 	EqualityOperator,
 	Order,
 	SortContext,

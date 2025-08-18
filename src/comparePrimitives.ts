@@ -5,8 +5,7 @@
 
 import type {Primitive} from '@tsdotnet/common-interfaces';
 import areEqual from './areEqual';
-import CompareResult from './CompareResult';
-
+import { CompareResultValue as CompareResult } from './CompareResult';
 
 /**
  * Compares two comparable objects or primitives.

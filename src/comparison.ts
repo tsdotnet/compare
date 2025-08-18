@@ -3,29 +3,27 @@
  * Licensing: MIT
  */
 
-import type {Primitive, Selector} from '@tsdotnet/common-interfaces';
-import type {Comparison} from './Comparable';
+import type { Primitive, Selector } from '@tsdotnet/common-interfaces';
+import type { Comparison } from './Comparable';
 import comparePrimitives from './comparePrimitives';
-import CompareResult from './CompareResult';
-import Order from './Order';
-import type {OrderByComparison, OrderByKey, OrderBySelector} from './OrderBy';
+import { type CompareResultValue as CompareResult } from './CompareResult';
+import { OrderValue as Order } from './Order';
+import type { OrderByComparison, OrderByKey, OrderBySelector } from './OrderBy';
 
- 
-namespace comparison
-{
+
+namespace comparison {
 	/**
 	 * Creates a comparison function from selector.
 	 * @param {Selector<T, Primitive>} selector
 	 * @param {Order} order
 	 * @return {Comparison<T>}
 	 */
-	export function fromSelector<T> (
+	export function fromSelector<T>(
 		selector: Selector<T, Primitive>,
-		order: Order = Order.Ascending): Comparison<T>
-	{
-		if(order!== -1) order = 1;
-		return function(a: T, b: T): CompareResult {
-			return comparePrimitives(selector(a), selector(b))*order!;
+		order: Order = Order.Ascending): Comparison<T> {
+		if (order !== -1) order = 1;
+		return function (a: T, b: T): CompareResult {
+			return comparePrimitives(selector(a), selector(b)) * order!;
 		};
 	}
 
@@ -35,14 +33,13 @@ namespace comparison
 	 * @param {Order} order
 	 * @return {Comparison<T>}
 	 */
-	export function fromKey<T extends object> (
+	export function fromKey<T extends object>(
 		key: keyof T,
-		order: Order = Order.Ascending): Comparison<T>
-	{
-		if(order!== -1) order = 1;
-		return function(a: T, b: T): CompareResult {
-			 
-			return comparePrimitives(a[key] as any, b[key] as any)*order!;
+		order: Order = Order.Ascending): Comparison<T> {
+		if (order !== -1) order = 1;
+		return function (a: T, b: T): CompareResult {
+
+			return comparePrimitives(a[key] as any, b[key] as any) * order!;
 		};
 	}
 
@@ -51,10 +48,9 @@ namespace comparison
 	 * @param {{[key]: Order}} keys
 	 * @return {Comparison<T>}
 	 */
-	export function fromKeys<T extends object> (keys: (keyof T)[]): Comparison<T>;
-	export function fromKeys<T extends object> (keys: { [P in keyof T]?: Order }): Comparison<T>;
-	export function fromKeys<T extends Record<PropertyKey, unknown>> (keys: (keyof T)[] | { [P in keyof T]?: Order }): Comparison<T>
-	{
+	export function fromKeys<T extends object>(keys: (keyof T)[]): Comparison<T>;
+	export function fromKeys<T extends object>(keys: { [P in keyof T]?: Order }): Comparison<T>;
+	export function fromKeys<T extends Record<PropertyKey, unknown>>(keys: (keyof T)[] | { [P in keyof T]?: Order }): Comparison<T> {
 		return keys instanceof Array
 			? join(keys.map(k => fromKey(k)))
 			: join(Object.keys(keys).map(k => fromKey(k, keys[k])));
@@ -65,13 +61,11 @@ namespace comparison
 	 * @param {Iterable<Comparison<T>>} comparisons
 	 * @return {Comparison<T>}
 	 */
-	export function join<T> (comparisons: Iterable<Comparison<T>>): Comparison<T>
-	{
-		return function(a: T, b: T): number {
-			for(const c of comparisons)
-			{
+	export function join<T>(comparisons: Iterable<Comparison<T>>): Comparison<T> {
+		return function (a: T, b: T): number {
+			for (const c of comparisons) {
 				const o = c(a, b);
-				if(o!==0) return o;
+				if (o !== 0) return o;
 			}
 			return 0;
 		};
@@ -82,29 +76,26 @@ namespace comparison
 	 * @param {OrderBySelector<T> | OrderByComparison<T> | [(OrderByComparison<T> | OrderBySelector<T>)]} orderBy
 	 * @return {Comparison<T>}
 	 */
-	export function from<T> (
+	export function from<T>(
 		orderBy: OrderBySelector<T> | OrderByComparison<T> | [OrderByComparison<T> | OrderBySelector<T>]): Comparison<T>;
-	export function from<T extends object> (
+	export function from<T extends object>(
 		orderBy: OrderByKey<T> | OrderBySelector<T> | OrderByComparison<T> | [OrderByKey<T> | OrderBySelector<T> | OrderByComparison<T>]): Comparison<T>;
-	 
-	export function from (orderBy: any): Comparison<any>
-	{
-		if(typeof orderBy==='string') return fromKey(orderBy);
-		if(orderBy instanceof Array) return join(orderBy.map(from));
 
-		if('key' in orderBy) return fromKey(orderBy.key, orderBy.order);
-		if('selector' in orderBy) return fromSelector(orderBy.selector, orderBy.order);
-		if('comparison' in orderBy)
-		{
-			return orderBy.order=== -1
+	export function from(orderBy: any): Comparison<any> {
+		if (typeof orderBy === 'string') return fromKey(orderBy);
+		if (orderBy instanceof Array) return join(orderBy.map(from));
+
+		if ('key' in orderBy) return fromKey(orderBy.key, orderBy.order);
+		if ('selector' in orderBy) return fromSelector(orderBy.selector, orderBy.order);
+		if ('comparison' in orderBy) {
+			return orderBy.order === -1
 				? invert(orderBy.comparison)
 				: orderBy.comparison;
 		}
 
-		if(typeof orderBy==='function')
-		{
-			if(orderBy.length>1) return orderBy;
-			if(orderBy.length==1) return fromSelector(orderBy);
+		if (typeof orderBy === 'function') {
+			if (orderBy.length > 1) return orderBy;
+			if (orderBy.length == 1) return fromSelector(orderBy);
 		}
 
 		throw new TypeError('Unknown order-by to comparison evaluator.');
@@ -115,10 +106,9 @@ namespace comparison
 	 * @param {Comparison<T>} comparison
 	 * @return {Comparison<T>}
 	 */
-	export function invert<T> (comparison: Comparison<T>): Comparison<T>
-	{
-		return function(a: T, b: T): CompareResult {
-			return comparison(a, b)* -1;
+	export function invert<T>(comparison: Comparison<T>): Comparison<T> {
+		return function (a: T, b: T): CompareResult {
+			return comparison(a, b) * -1;
 		};
 	}
 }

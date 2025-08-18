@@ -10,4 +10,4 @@ import KeySortedContext from './KeySortedContext';
 import Order from './Order';
 import SortContext from './SortContext';
 import EqualityOperator from './EqualityOperator';
-export { areEqual, areEquivalent, areEquivalentObjects, areSequencesEqual, compare, typeUtil as type, Comparable, CompareResult, Comparison, EqualityComparison, EqualityOperator, Order, SortContext, KeySortedContext };
+export { areEqual, areEquivalent, areEquivalentObjects, areSequencesEqual, compare, typeUtil as type, type Comparable, type Comparison, type EqualityComparison, CompareResult, EqualityOperator, Order, SortContext, KeySortedContext };

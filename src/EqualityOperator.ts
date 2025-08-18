@@ -4,7 +4,7 @@
  */
 
 
-const enum EqualityOperator
+enum EqualityOperator
 {
 	/**
 	 * ==

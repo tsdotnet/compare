@@ -6,7 +6,7 @@
 import type {Selector} from '@tsdotnet/common-interfaces';
 import {Comparable, Comparer, Comparison} from './Comparable';
 import compare from './compare';
-import Order from './Order';
+import { OrderValue as Order } from './Order';
 import SortContext from './SortContext';
 
 /**

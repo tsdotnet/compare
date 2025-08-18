@@ -1,14 +1,14 @@
-"use strict";
 /*!
  * @author electricessence / https://github.com/electricessence/
  * Licensing: MIT
  */
-Object.defineProperty(exports, "__esModule", { value: true });
 var CompareResult;
 (function (CompareResult) {
     CompareResult[CompareResult["Equal"] = 0] = "Equal";
     CompareResult[CompareResult["Greater"] = 1] = "Greater";
     CompareResult[CompareResult["Less"] = -1] = "Less";
 })(CompareResult || (CompareResult = {}));
-exports.default = CompareResult;
+var CompareResult$1 = CompareResult;
+
+export { CompareResult$1 as default };
 //# sourceMappingURL=CompareResult.js.map

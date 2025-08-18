@@ -4,7 +4,7 @@
  */
 import type { Primitive, Selector } from '@tsdotnet/common-interfaces';
 import type { Comparison } from './Comparable';
-import Order from './Order';
+import { OrderValue as Order } from './Order';
 import type { OrderByComparison, OrderByKey, OrderBySelector } from './OrderBy';
 declare namespace comparison {
     function fromSelector<T>(selector: Selector<T, Primitive>, order?: Order): Comparison<T>;

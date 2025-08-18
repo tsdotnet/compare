@@ -1,13 +1,13 @@
-"use strict";
 /*!
  * @author electricessence / https://github.com/electricessence/
  * Licensing: MIT
  */
-Object.defineProperty(exports, "__esModule", { value: true });
 var EqualityOperator;
 (function (EqualityOperator) {
     EqualityOperator[EqualityOperator["Equality"] = 0] = "Equality";
     EqualityOperator[EqualityOperator["Identity"] = 1] = "Identity";
 })(EqualityOperator || (EqualityOperator = {}));
-exports.default = EqualityOperator;
+var EqualityOperator$1 = EqualityOperator;
+
+export { EqualityOperator$1 as default };
 //# sourceMappingURL=EqualityOperator.js.map

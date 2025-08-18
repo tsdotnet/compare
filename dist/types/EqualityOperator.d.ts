@@ -2,7 +2,7 @@
  * @author electricessence / https://github.com/electricessence/
  * Licensing: MIT
  */
-declare const enum EqualityOperator {
+declare enum EqualityOperator {
     Equality = 0,
     Identity = 1
 }

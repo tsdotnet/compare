@@ -4,7 +4,7 @@
  */
 
 import type {Comparer, Comparison} from './Comparable';
-import Order from './Order';
+import { OrderOrValue as Order, OrderValue } from './Order';
 
 /**
  * A class for helping in complex sorting patterns.
@@ -21,7 +21,7 @@ implements Comparer<T>
 	constructor (
 		protected _next: Comparer<T> | null,
 		protected _comparer: Comparison<T>,
-		protected _order: Order = Order.Ascending
+		protected _order: Order = OrderValue.Ascending
 	)
 	{}
 
