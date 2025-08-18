@@ -1,10 +1,11 @@
+import compare from './compare.js';
+import SortContext from './SortContext.js';
+
 /*!
  * @author electricessence / https://github.com/electricessence/
  * Licensing: MIT
  */
-import compare from './compare';
-import SortContext from './SortContext';
-export default class KeySortedContext extends SortContext {
+class KeySortedContext extends SortContext {
     _keySelector;
     constructor(next, keySelector, order = 1, comparer = compare) {
         super(next, comparer, order);
@@ -20,4 +21,6 @@ export default class KeySortedContext extends SortContext {
         return this._order * d;
     }
 }
+
+export { KeySortedContext as default };
 //# sourceMappingURL=KeySortedContext.js.map

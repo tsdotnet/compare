@@ -1,9 +1,10 @@
+import areEqual from './areEqual.js';
+
 /*!
  * @author electricessence / https://github.com/electricessence/
  * Licensing: MIT
  */
-import { areEqual } from './index';
-export default function areSequencesEqual(a, b, equalityComparer = areEqual) {
+function areSequencesEqual(a, b, equalityComparer = areEqual) {
     if (a === b)
         return true;
     if (a == null || b == null)
@@ -23,4 +24,6 @@ export default function areSequencesEqual(a, b, equalityComparer = areEqual) {
             return false;
     }
 }
+
+export { areSequencesEqual as default };
 //# sourceMappingURL=areSequencesEqual.js.map

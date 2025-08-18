@@ -1,10 +1,8 @@
-import type from '@tsdotnet/type';
-import areEqual from './areEqual';
-import areEquivalentObjects from './areEquivalent';
-import areEquivalent from './areEquivalent';
-import areSequencesEqual from './areSequencesEqual';
-import compare from './compare';
-import KeySortedContext from './KeySortedContext';
-import SortContext from './SortContext';
-export { areEqual, areEquivalent, areEquivalentObjects, areSequencesEqual, compare, type, SortContext, KeySortedContext };
+export { default as type } from '@tsdotnet/type';
+export { default as areEqual } from './areEqual.js';
+export { default as areEquivalent, default as areEquivalentObjects } from './areEquivalent.js';
+export { default as areSequencesEqual } from './areSequencesEqual.js';
+export { default as compare } from './compare.js';
+export { default as KeySortedContext } from './KeySortedContext.js';
+export { default as SortContext } from './SortContext.js';
 //# sourceMappingURL=index.js.map

@@ -2,7 +2,7 @@
  * @author electricessence / https://github.com/electricessence/
  * Licensing: MIT
  */
-import { Comparer, Comparison } from './Comparable';
+import type { Comparer, Comparison } from './Comparable';
 import Order from './Order';
 export default class SortContext<T> implements Comparer<T> {
     protected _next: Comparer<T> | null;

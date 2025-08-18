@@ -4,7 +4,7 @@
  */
 
 
-export const enum EqualityOperator
+const enum EqualityOperator
 {
 	/**
 	 * ==
@@ -17,3 +17,5 @@ export const enum EqualityOperator
 	 */
 	Identity = 1 // (true)
 }
+
+export default EqualityOperator;

@@ -3,9 +3,9 @@
  * Licensing: MIT
  */
 
-import {Primitive, Selector} from '@tsdotnet/common-interfaces';
-import {Comparison} from './Comparable';
-import Order from './Order';
+import type {Primitive, Selector} from '@tsdotnet/common-interfaces';
+import type {Comparison} from './Comparable';
+import type Order from './Order';
 
 export type OrderByOption = {
 	order?: Order;

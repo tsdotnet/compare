@@ -3,7 +3,7 @@
  * Licensing: MIT
  */
 
-import {Comparer, Comparison} from './Comparable';
+import type {Comparer, Comparison} from './Comparable';
 import Order from './Order';
 
 /**

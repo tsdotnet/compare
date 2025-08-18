@@ -5,8 +5,9 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = areSequencesEqual;
-const index_1 = require("./index");
-function areSequencesEqual(a, b, equalityComparer = index_1.areEqual) {
+const tslib_1 = require("tslib");
+const areEqual_1 = tslib_1.__importDefault(require("./areEqual"));
+function areSequencesEqual(a, b, equalityComparer = areEqual_1.default) {
     if (a === b)
         return true;
     if (a == null || b == null)

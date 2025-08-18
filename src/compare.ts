@@ -4,7 +4,7 @@
  */
 
 import type {Primitive} from '@tsdotnet/common-interfaces';
-import type from '@tsdotnet/type';
+import typeUtil from '@tsdotnet/type';
 import {type ComparableObject} from './Comparable';
 import comparePrimitives from './comparePrimitives';
 import CompareResult from './CompareResult';
@@ -21,9 +21,9 @@ function compare<T> (a: T, b: ComparableObject<T>): number;
 function compare<T extends Primitive> (a: T, b: T): CompareResult;
 function compare (a: unknown, b: unknown): CompareResult
 {
-	if(a && type.hasMember<ComparableObject<unknown>>(a, COMPARE_TO)) return a.compareTo(b);
+	if(a && typeUtil.hasMember<ComparableObject<unknown>>(a, COMPARE_TO)) return a.compareTo(b);
 	// If a has compareTo, use it.
-	else if(b && type.hasMember<ComparableObject<unknown>>(b, COMPARE_TO)) return -b.compareTo(a); // a doesn't have compareTo? check if b does and invert.
+	else if(b && typeUtil.hasMember<ComparableObject<unknown>>(b, COMPARE_TO)) return -b.compareTo(a); // a doesn't have compareTo? check if b does and invert.
 
 	 
 	return comparePrimitives<any>(a, b);

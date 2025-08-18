@@ -3,7 +3,8 @@
  * Licensing: MIT
  */
 
-import {areEqual, type EqualityComparison} from './index';
+import areEqual from './areEqual';
+import type {EqualityComparison} from './Comparable';
 
 /**
  * Compares two sequences for equality.

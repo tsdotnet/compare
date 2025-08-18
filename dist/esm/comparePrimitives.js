@@ -1,8 +1,9 @@
+import areEqual from './areEqual.js';
+
 /*!
  * @author electricessence / https://github.com/electricessence/
  * Licensing: MIT
  */
-import areEqual from './areEqual';
 function comparePrimitives(a, b) {
     if (areEqual(a, b))
         return 0;
@@ -18,5 +19,7 @@ function comparePrimitives(a, b) {
     }
     comparePrimitives.inverted = inverted;
 })(comparePrimitives || (comparePrimitives = {}));
-export default comparePrimitives;
+var comparePrimitives$1 = comparePrimitives;
+
+export { comparePrimitives$1 as default };
 //# sourceMappingURL=comparePrimitives.js.map

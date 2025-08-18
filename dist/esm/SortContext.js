@@ -2,7 +2,7 @@
  * @author electricessence / https://github.com/electricessence/
  * Licensing: MIT
  */
-export default class SortContext {
+class SortContext {
     _next;
     _comparer;
     _order;
@@ -46,4 +46,6 @@ export default class SortContext {
         return this._order * d;
     }
 }
+
+export { SortContext as default };
 //# sourceMappingURL=SortContext.js.map
