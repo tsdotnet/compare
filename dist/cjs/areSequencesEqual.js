@@ -6,13 +6,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = areSequencesEqual;
 const index_1 = require("./index");
-/**
- * Compares two sequences for equality.
- * @param {Iterable} a
- * @param {Iterable} b
- * @param {EqualityComparison} equalityComparer
- * @return {boolean}
- */
 function areSequencesEqual(a, b, equalityComparer = index_1.areEqual) {
     if (a === b)
         return true;

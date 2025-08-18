@@ -57,7 +57,15 @@ implements Comparer<T>
 	{
 		if(source==null) return [];
 		const result: number[] = source.map((s, i) => i);
-		result.sort((a, b) => this.compare(source[a], source[b]));
+		result.sort((a, b) => {
+			const valueA = source[a];
+			const valueB = source[b];
+			// Handle undefined values that might occur if indices are out of bounds
+			if (valueA === undefined && valueB === undefined) return 0;
+			if (valueA === undefined) return -1;
+			if (valueB === undefined) return 1;
+			return this.compare(valueA, valueB);
+		});
 		return result;
 	}
 

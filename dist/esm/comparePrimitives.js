@@ -3,27 +3,16 @@
  * Licensing: MIT
  */
 import areEqual from './areEqual';
-/**
- * Compares two comparable objects or primitives.
- * @param a
- * @param b
- */
 function comparePrimitives(a, b) {
     if (areEqual(a, b))
-        return 0 /* CompareResult.Equal */;
-    // Allow for special inequality..
+        return 0;
     if (a > b || a === 0 && b == 0 || a === null && b === undefined)
-        return 1 /* CompareResult.Greater */;
+        return 1;
     if (b > a || b === 0 && a == 0 || b === null && a === undefined)
-        return -1 /* CompareResult.Less */;
+        return -1;
     return NaN;
 }
 (function (comparePrimitives) {
-    /**
-     * Compares two comparable objects or primitives and inverts the sign of the result.
-     * @param a
-     * @param b
-     */
     function inverted(a, b) {
         return -comparePrimitives(a, b);
     }

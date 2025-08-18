@@ -11,9 +11,8 @@ const COMPARE_TO = 'compareTo';
 function compare(a, b) {
     if (a && type_1.default.hasMember(a, COMPARE_TO))
         return a.compareTo(b);
-    // If a has compareTo, use it.
     else if (b && type_1.default.hasMember(b, COMPARE_TO))
-        return -b.compareTo(a); // a doesn't have compareTo? check if b does and invert.
+        return -b.compareTo(a);
     return (0, comparePrimitives_1.default)(a, b);
 }
 (function (compare) {

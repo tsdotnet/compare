@@ -3,8 +3,8 @@
  * Licensing: MIT
  */
 
-import type from '@tsdotnet/type';
-import isTrueNaN = type.isTrueNaN;
+import typeUtil from '@tsdotnet/type';
+import isTrueNaN = typeUtil.isTrueNaN;
 
 /**
  * Used for special identity (===) comparison including NaN.

@@ -3,7 +3,7 @@
  * Licensing: MIT
  */
 
-import type from '@tsdotnet/type';
+import typeUtil from '@tsdotnet/type';
 import areEqual from './areEqual';
 
 /**
@@ -23,8 +23,8 @@ export default function areEquivalentObjects (
 	if(areEqual(a, b)) return true;
 
 	const
-		aKeys = type.isObject(a) && Object.keys(a),
-		bKeys = type.isObject(b) && Object.keys(b);
+		aKeys = typeUtil.isObject(a) && Object.keys(a),
+		bKeys = typeUtil.isObject(b) && Object.keys(b);
 
 	if(a==null || b==null)
 	{
@@ -45,15 +45,22 @@ export default function areEquivalentObjects (
 		for(let i = 0; i<len; i++)
 		{
 			const key = aKeys[i];
-			if(key!==bKeys[i] || !areEqual((a as any)[key], (a as any)[key])) return false;
+			if(key !== bKeys[i]) return false;
 		}
 
-		// Doesn't track circular references but allows for controlling the amount of recursion.
-		if(extraDepth>0)
+		// Check values - use deep comparison if extraDepth > 0, otherwise use areEqual
+		if(extraDepth > 0)
 		{
 			for(const key of aKeys)
 			{
-				if(!areEquivalentObjects((a as any)[key], (a as any)[key], nullEquivalency, extraDepth - 1)) return false;
+				if(!areEquivalentObjects((a as any)[key], (b as any)[key], nullEquivalency, extraDepth - 1)) return false;
+			}
+		}
+		else
+		{
+			for(const key of aKeys)
+			{
+				if(!areEqual((a as any)[key], (b as any)[key])) return false;
 			}
 		}
 

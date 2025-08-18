@@ -8,9 +8,8 @@ const COMPARE_TO = 'compareTo';
 function compare(a, b) {
     if (a && type.hasMember(a, COMPARE_TO))
         return a.compareTo(b);
-    // If a has compareTo, use it.
     else if (b && type.hasMember(b, COMPARE_TO))
-        return -b.compareTo(a); // a doesn't have compareTo? check if b does and invert.
+        return -b.compareTo(a);
     return comparePrimitives(a, b);
 }
 (function (compare) {

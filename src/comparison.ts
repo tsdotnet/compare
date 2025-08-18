@@ -4,11 +4,11 @@
  */
 
 import type {Primitive, Selector} from '@tsdotnet/common-interfaces';
-import {Comparison} from './Comparable';
+import type {Comparison} from './Comparable';
 import comparePrimitives from './comparePrimitives';
 import CompareResult from './CompareResult';
 import Order from './Order';
-import {OrderByComparison, OrderByKey, OrderBySelector} from './OrderBy';
+import type {OrderByComparison, OrderByKey, OrderBySelector} from './OrderBy';
 
  
 namespace comparison

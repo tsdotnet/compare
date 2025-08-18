@@ -3,13 +3,6 @@
  * Licensing: MIT
  */
 import { areEqual } from './index';
-/**
- * Compares two sequences for equality.
- * @param {Iterable} a
- * @param {Iterable} b
- * @param {EqualityComparison} equalityComparer
- * @return {boolean}
- */
 export default function areSequencesEqual(a, b, equalityComparer = areEqual) {
     if (a === b)
         return true;

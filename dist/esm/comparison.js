@@ -5,13 +5,7 @@
 import comparePrimitives from './comparePrimitives';
 var comparison;
 (function (comparison_1) {
-    /**
-     * Creates a comparison function from selector.
-     * @param {Selector<T, Primitive>} selector
-     * @param {Order} order
-     * @return {Comparison<T>}
-     */
-    function fromSelector(selector, order = 1 /* Order.Ascending */) {
+    function fromSelector(selector, order = 1) {
         if (order !== -1)
             order = 1;
         return function (a, b) {
@@ -19,13 +13,7 @@ var comparison;
         };
     }
     comparison_1.fromSelector = fromSelector;
-    /**
-     * Creates a comparison function from a key of an object.
-     * @param {keyof T} key
-     * @param {Order} order
-     * @return {Comparison<T>}
-     */
-    function fromKey(key, order = 1 /* Order.Ascending */) {
+    function fromKey(key, order = 1) {
         if (order !== -1)
             order = 1;
         return function (a, b) {
@@ -39,11 +27,6 @@ var comparison;
             : join(Object.keys(keys).map(k => fromKey(k, keys[k])));
     }
     comparison_1.fromKeys = fromKeys;
-    /**
-     * Joins comparison functions into one by evaluating equality in comparison order.
-     * @param {Iterable<Comparison<T>>} comparisons
-     * @return {Comparison<T>}
-     */
     function join(comparisons) {
         return function (a, b) {
             for (const c of comparisons) {
@@ -78,11 +61,6 @@ var comparison;
         throw new TypeError('Unknown order-by to comparison evaluator.');
     }
     comparison_1.from = from;
-    /**
-     * Inverts a comparison function's order.
-     * @param {Comparison<T>} comparison
-     * @return {Comparison<T>}
-     */
     function invert(comparison) {
         return function (a, b) {
             return comparison(a, b) * -1;

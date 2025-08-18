@@ -4,32 +4,15 @@
  * Licensing: MIT
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-/**
- * A class for helping in complex sorting patterns.
- */
 class SortContext {
-    /**
-     * Constructs a SortContext.
-     * @param {Comparer | null} _next If provided (not null) any items that are considered equal will use this comparer to decided their order.
-     * @param {Comparison} _comparer The comparison function that will differentiate between items.
-     * @param {Order} _order Ascending or Descending.
-     */
-    constructor(_next, _comparer, _order = 1 /* Order.Ascending */) {
+    constructor(_next, _comparer, _order = 1) {
         this._next = _next;
         this._comparer = _comparer;
         this._order = _order;
     }
-    /**
-     * Direction of the comparison.
-     * @type {Order}
-     */
     get order() {
         return this._order;
     }
-    /**
-     * A scope safe comparison function (delegate).
-     * @return {Comparison}
-     */
     get comparison() {
         if (this._comparison)
             return this._comparison;
@@ -37,24 +20,23 @@ class SortContext {
         this._comparison = c;
         return c;
     }
-    /**
-     * Generates an array of indexes from the source in order of their expected internalSort without modifying the source.
-     * @param source
-     * @returns {number[]}
-     */
     generateSortedIndexes(source) {
         if (source == null)
             return [];
         const result = source.map((s, i) => i);
-        result.sort((a, b) => this.compare(source[a], source[b]));
+        result.sort((a, b) => {
+            const valueA = source[a];
+            const valueB = source[b];
+            if (valueA === undefined && valueB === undefined)
+                return 0;
+            if (valueA === undefined)
+                return -1;
+            if (valueB === undefined)
+                return 1;
+            return this.compare(valueA, valueB);
+        });
         return result;
     }
-    /**
-     * Compares two values based upon SortContext parameters.
-     * @param a
-     * @param b
-     * @returns {any}
-     */
     compare(a, b) {
         const d = this._comparer(a, b);
         if (d === 0 && this._next)
