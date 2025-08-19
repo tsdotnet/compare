@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import comparison from '../src/comparison';
+import * as comparison from '../src/comparison';
 import { OrderValue } from '../src/Order.js';
 import testItems, {TestItem} from './_testItems.js';
 

@@ -4,6 +4,7 @@ import areEquivalentObjects from './areEquivalent';
 import areEquivalent from './areEquivalent';
 import areSequencesEqual from './areSequencesEqual';
 import type { Comparer, ComparableObject, Comparable, Comparison, EqualityComparison } from './Comparable';
+import * as comparison from './comparison';
 import compare from './compare';
 import CompareResult from './CompareResult';
 import KeySortedContext from './KeySortedContext';
@@ -23,6 +24,7 @@ export {
 	type Comparable,
 	type Comparison,
 	type EqualityComparison,
+	comparison,
 	CompareResult,
 	EqualityOperator,
 	Order, OrderOrValue,
