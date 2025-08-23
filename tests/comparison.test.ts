@@ -8,11 +8,9 @@ describe('comparison', () => {
 		it('should order by key ascending', () => {
 			const items = testItems.slice().reverse();
 			items.sort(comparison.fromKey<TestItem>('a'));
-			expect(items).toHaveLength(testItems.length);
-			expect(items.length).toBeGreaterThan(0);
-			const firstItem = items[0];
-			expect(firstItem).toBeDefined();
-			expect(firstItem?.a).toBe(1);
+			const first = items[0];
+			expect(first).toBeDefined();
+			expect(first?.a).toBe(1);
 			items.reverse();
 			items.sort(comparison.from<TestItem>('a'));
 			const firstAfterReverse = items[0];
@@ -22,15 +20,11 @@ describe('comparison', () => {
 		it('should order by key descending', () => {
 			const items = testItems.slice();
 			items.sort(comparison.fromKey<TestItem>('a', OrderValue.Descending));
-			expect(items).toHaveLength(testItems.length);
-			expect(items.length).toBeGreaterThan(0);
-			const firstItem = items[0];
-			expect(firstItem).toBeDefined();
-			expect(firstItem?.a).toBe(2);
-			const sortedItems = items.sort(comparison.fromKeys<TestItem>({a: OrderValue.Descending}));
-			expect(sortedItems).toHaveLength(testItems.length);
-			expect(sortedItems.length).toBeGreaterThan(0);
-			const firstSorted = sortedItems[0];
+			const first = items[0];
+			expect(first).toBeDefined();
+			expect(first?.a).toBe(2);
+			const sorted = items.sort(comparison.fromKeys<TestItem>({a: OrderValue.Descending}));
+			const firstSorted = sorted[0];
 			expect(firstSorted).toBeDefined();
 			expect(firstSorted?.a).toBe(2);
 		});
@@ -40,26 +34,22 @@ describe('comparison', () => {
 		it('should order by keys ascending', () => {
 			const items = testItems.slice().reverse();
 			items.sort(comparison.fromKeys<TestItem>(['a', 'b']));
-			expect(items).toHaveLength(testItems.length);
-			expect(items.length).toBeGreaterThanOrEqual(2);
-			const firstItem = items[0];
-			expect(firstItem).toBeDefined();
-			expect(firstItem?.a).toBe(1);
-			expect(firstItem?.b).toBe(1);
-			const secondItem = items[1];
-			expect(secondItem).toBeDefined();
-			expect(secondItem?.a).toBe(1);
-			expect(secondItem?.b).toBe(2);
+			const first = items[0];
+			const second = items[1];
+			expect(first).toBeDefined();
+			expect(first?.a).toBe(1);
+			expect(first?.b).toBe(1);
+			expect(second).toBeDefined();
+			expect(second?.a).toBe(1);
+			expect(second?.b).toBe(2);
 		});
 		it('should order by keys descending', () => {
 			const items = testItems.slice();
 			items.sort(comparison.fromKeys<TestItem>({a: OrderValue.Descending, b: OrderValue.Descending}));
-			expect(items).toHaveLength(testItems.length);
-			expect(items.length).toBeGreaterThan(0);
-			const firstItem = items[0];
-			expect(firstItem).toBeDefined();
-			expect(firstItem?.a).toBe(2);
-			expect(firstItem?.b).toBe(3);
+			const first = items[0];
+			expect(first).toBeDefined();
+			expect(first?.a).toBe(2);
+			expect(first?.b).toBe(3);
 		});
 	});
 });
