@@ -1,6 +1,6 @@
 {
   "name": "@tsdotnet/compare",
-  "version": "1.7.2",
+  "version": "1.7.3",
   "description": "Utility for common comparison functions including sorting and type reflection.",
   "author": "electricessence",
   "license": "MIT",
