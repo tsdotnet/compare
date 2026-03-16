@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import KeySortedContext from '../src/KeySortedContext';
-import { OrderValue as Order } from '../src/Order';
+import KeySortedContext from '../src/KeySortedContext.js';
+import { OrderValue as Order } from '../src/Order.js';
 
 interface Person {
 	name: string;

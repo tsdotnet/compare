@@ -3,8 +3,8 @@
  * Licensing: MIT
  */
 
-import type {Comparer, Comparison} from './Comparable';
-import { OrderOrValue as Order, OrderValue } from './Order';
+import type {Comparer, Comparison} from './Comparable.js';
+import { OrderOrValue as Order, OrderValue } from './Order.js';
 
 /**
  * A class for helping in complex sorting patterns.

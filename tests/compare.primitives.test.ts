@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import compare from '../src/compare';
-import { CompareResultValue as CompareResult } from '../src/CompareResult';
+import compare from '../src/compare.js';
+import { CompareResultValue as CompareResult } from '../src/CompareResult.js';
 
 describe('compare', () => {
 	describe('compare.primitives', () => {

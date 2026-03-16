@@ -5,9 +5,9 @@
 
 import type { Primitive } from '@tsdotnet/common-interfaces';
 import typeUtil from '@tsdotnet/type';
-import { type ComparableObject } from './Comparable';
-import comparePrimitives from './comparePrimitives';
-import { type CompareResultValue as CompareResult } from './CompareResult';
+import { type ComparableObject } from './Comparable.js';
+import comparePrimitives from './comparePrimitives.js';
+import { type CompareResultValue as CompareResult } from './CompareResult.js';
 
 const COMPARE_TO = 'compareTo';
 

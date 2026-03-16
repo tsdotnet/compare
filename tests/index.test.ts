@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import * as compare from '../src/index';
+import * as compare from '../src/index.js';
 
 describe('index module exports', () => {
 	it('should export all comparison functions', () => {

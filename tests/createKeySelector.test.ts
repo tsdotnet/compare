@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import createKeySelector from '../src/createKeySelector';
+import createKeySelector from '../src/createKeySelector.js';
 
 describe('createKeySelector', () => {
 	it('should values of keys in order', () => {

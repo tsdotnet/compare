@@ -11,19 +11,19 @@ exports.join = join;
 exports.from = from;
 exports.invert = invert;
 const tslib_1 = require("tslib");
-const comparePrimitives_1 = tslib_1.__importDefault(require("./comparePrimitives"));
+const comparePrimitives_js_1 = tslib_1.__importDefault(require("./comparePrimitives.js"));
 function fromSelector(selector, order = 1) {
     if (order !== -1)
         order = 1;
     return function (a, b) {
-        return (0, comparePrimitives_1.default)(selector(a), selector(b)) * order;
+        return (0, comparePrimitives_js_1.default)(selector(a), selector(b)) * order;
     };
 }
 function fromKey(key, order = 1) {
     if (order !== -1)
         order = 1;
     return function (a, b) {
-        return (0, comparePrimitives_1.default)(a[key], b[key]) * order;
+        return (0, comparePrimitives_js_1.default)(a[key], b[key]) * order;
     };
 }
 function fromKeys(keys) {

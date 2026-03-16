@@ -4,8 +4,8 @@
  */
 
 import type {Primitive} from '@tsdotnet/common-interfaces';
-import areEqual from './areEqual';
-import { CompareResultValue as CompareResult } from './CompareResult';
+import areEqual from './areEqual.js';
+import { CompareResultValue as CompareResult } from './CompareResult.js';
 
 /**
  * Compares two comparable primitive values.

@@ -4,10 +4,10 @@
  */
 
 import type {Selector} from '@tsdotnet/common-interfaces';
-import {Comparable, Comparer, Comparison} from './Comparable';
-import compare from './compare';
-import { OrderValue as Order } from './Order';
-import SortContext from './SortContext';
+import {Comparable, Comparer, Comparison} from './Comparable.js';
+import compare from './compare.js';
+import { OrderValue as Order } from './Order.js';
+import SortContext from './SortContext.js';
 
 /**
  * A class for helping in complex sorting patterns using a key selector.

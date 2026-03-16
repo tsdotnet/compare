@@ -7,9 +7,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = areEquivalentObjects;
 const tslib_1 = require("tslib");
 const type_1 = tslib_1.__importDefault(require("@tsdotnet/type"));
-const areEqual_1 = tslib_1.__importDefault(require("./areEqual"));
+const areEqual_js_1 = tslib_1.__importDefault(require("./areEqual.js"));
 function areEquivalentObjects(a, b, nullEquivalency = true, extraDepth = 0) {
-    if ((0, areEqual_1.default)(a, b))
+    if ((0, areEqual_js_1.default)(a, b))
         return true;
     const aKeys = type_1.default.isObject(a) && Object.keys(a), bKeys = type_1.default.isObject(b) && Object.keys(b);
     if (a == null || b == null) {
@@ -40,7 +40,7 @@ function areEquivalentObjects(a, b, nullEquivalency = true, extraDepth = 0) {
         }
         else {
             for (const key of aKeys) {
-                if (!(0, areEqual_1.default)(a[key], b[key]))
+                if (!(0, areEqual_js_1.default)(a[key], b[key]))
                     return false;
             }
         }

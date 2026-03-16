@@ -2,8 +2,8 @@
  * @author electricessence / https://github.com/electricessence/
  * Licensing: MIT
  */
-import type { Comparer, Comparison } from './Comparable';
-import { OrderOrValue as Order } from './Order';
+import type { Comparer, Comparison } from './Comparable.js';
+import { OrderOrValue as Order } from './Order.js';
 export default class SortContext<T> implements Comparer<T> {
     protected _next: Comparer<T> | null;
     protected _comparer: Comparison<T>;

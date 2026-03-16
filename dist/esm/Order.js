@@ -7,7 +7,7 @@ var Order;
     Order[Order["Ascending"] = 1] = "Ascending";
     Order[Order["Descending"] = -1] = "Descending";
 })(Order || (Order = {}));
-var Order$1 = Order;
+var Order_default = Order;
 
-export { Order$1 as default };
+export { Order_default as default };
 //# sourceMappingURL=Order.js.map

@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import compare from '../src/compare';
+import compare from '../src/compare.js';
 
 class ComparableNumber {
 	constructor(private value: number) {}

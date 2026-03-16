@@ -4,11 +4,11 @@
  */
 
 import type { Primitive, Selector } from '@tsdotnet/common-interfaces';
-import type { Comparison } from './Comparable';
-import comparePrimitives from './comparePrimitives';
-import { type CompareResultValue as CompareResult } from './CompareResult';
-import { OrderValue as Order } from './Order';
-import type { OrderByComparison, OrderByKey, OrderBySelector } from './OrderBy';
+import type { Comparison } from './Comparable.js';
+import comparePrimitives from './comparePrimitives.js';
+import { type CompareResultValue as CompareResult } from './CompareResult.js';
+import { OrderValue as Order } from './Order.js';
+import type { OrderByComparison, OrderByKey, OrderBySelector } from './OrderBy.js';
 
 /**
  * Creates a comparison function from selector.

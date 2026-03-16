@@ -3,8 +3,8 @@
  * Licensing: MIT
  */
 
-import areEqual from './areEqual';
-import type {EqualityComparison} from './Comparable';
+import areEqual from './areEqual.js';
+import type {EqualityComparison} from './Comparable.js';
 
 /**
  * Compares two sequences for equality.

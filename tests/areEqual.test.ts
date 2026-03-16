@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import areEqual from '../src/areEqual';
-import areEquivalent from '../src/areEquivalent';
+import areEqual from '../src/areEqual.js';
+import areEquivalent from '../src/areEquivalent.js';
 
 describe('areEqual', () => {
 	it('should return true for actual equality', () => {

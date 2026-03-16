@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import * as comparison from '../src/comparison';
-import { OrderValue } from '../src/Order';
+import * as comparison from '../src/comparison.js';
+import { OrderValue } from '../src/Order.js';
 
 interface TestItem {
 	a: number;

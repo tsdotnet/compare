@@ -7,7 +7,7 @@ var EqualityOperator;
     EqualityOperator[EqualityOperator["Equality"] = 0] = "Equality";
     EqualityOperator[EqualityOperator["Identity"] = 1] = "Identity";
 })(EqualityOperator || (EqualityOperator = {}));
-var EqualityOperator$1 = EqualityOperator;
+var EqualityOperator_default = EqualityOperator;
 
-export { EqualityOperator$1 as default };
+export { EqualityOperator_default as default };
 //# sourceMappingURL=EqualityOperator.js.map

@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import areEquivalentObjects from '../src/areEquivalentObjects';
+import areEquivalentObjects from '../src/areEquivalentObjects.js';
 
 describe('areEquivalentObjects', () => {
 	describe('Basic equality cases', () => {

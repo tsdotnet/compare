@@ -1,16 +1,16 @@
 import typeUtil from '@tsdotnet/type';
-import areEqual from './areEqual';
-import areEquivalentObjects from './areEquivalent';
-import areEquivalent from './areEquivalent';
-import areSequencesEqual from './areSequencesEqual';
-import type { Comparer, ComparableObject, Comparable, Comparison, EqualityComparison } from './Comparable';
-import * as comparison from './comparison';
-import compare from './compare';
-import CompareResult from './CompareResult';
-import KeySortedContext from './KeySortedContext';
-import Order, { type OrderOrValue } from './Order';
-import SortContext from './SortContext';
-import EqualityOperator from './EqualityOperator';
+import areEqual from './areEqual.js';
+import areEquivalentObjects from './areEquivalent.js';
+import areEquivalent from './areEquivalent.js';
+import areSequencesEqual from './areSequencesEqual.js';
+import type { Comparer, ComparableObject, Comparable, Comparison, EqualityComparison } from './Comparable.js';
+import * as comparison from './comparison.js';
+import compare from './compare.js';
+import CompareResult from './CompareResult.js';
+import KeySortedContext from './KeySortedContext.js';
+import Order, { type OrderOrValue } from './Order.js';
+import SortContext from './SortContext.js';
+import EqualityOperator from './EqualityOperator.js';
 
 export {
 	areEqual,

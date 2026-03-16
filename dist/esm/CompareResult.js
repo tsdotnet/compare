@@ -8,7 +8,7 @@ var CompareResult;
     CompareResult[CompareResult["Greater"] = 1] = "Greater";
     CompareResult[CompareResult["Less"] = -1] = "Less";
 })(CompareResult || (CompareResult = {}));
-var CompareResult$1 = CompareResult;
+var CompareResult_default = CompareResult;
 
-export { CompareResult$1 as default };
+export { CompareResult_default as default };
 //# sourceMappingURL=CompareResult.js.map

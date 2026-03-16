@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import areSequencesEqual from '../src/areSequencesEqual';
+import areSequencesEqual from '../src/areSequencesEqual.js';
 
 describe('areSequencesEqual', () => {
 	it('should return true if matching elements', () => {

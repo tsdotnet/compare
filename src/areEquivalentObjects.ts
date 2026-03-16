@@ -4,7 +4,7 @@
  */
 
 import typeUtil from '@tsdotnet/type';
-import areEqual from './areEqual';
+import areEqual from './areEqual.js';
 
 /**
  * Determines if two primitives are equal or if two objects have the same key/value combinations.
