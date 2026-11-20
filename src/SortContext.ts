@@ -4,7 +4,7 @@
  */
 
 import type {Comparer, Comparison} from './Comparable.js';
-import { OrderOrValue as Order, OrderValue } from './Order.js';
+import Order, { type OrderOrValue } from './Order.js';
 
 /**
  * A class for helping in complex sorting patterns.
@@ -21,7 +21,7 @@ implements Comparer<T>
 	constructor (
 		protected _next: Comparer<T> | null,
 		protected _comparer: Comparison<T>,
-		protected _order: Order = OrderValue.Ascending
+		protected _order: OrderOrValue = Order.Ascending
 	)
 	{}
 
@@ -29,7 +29,7 @@ implements Comparer<T>
 	 * Direction of the comparison.
 	 * @type {Order}
 	 */
-	get order (): Order
+	get order (): OrderOrValue
 	{
 		return this._order;
 	}

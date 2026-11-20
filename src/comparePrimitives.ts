@@ -5,7 +5,7 @@
 
 import type {Primitive} from '@tsdotnet/common-interfaces';
 import areEqual from './areEqual.js';
-import { CompareResultValue as CompareResult } from './CompareResult.js';
+import CompareResult from './CompareResult.js';
 
 /**
  * Compares two comparable primitive values.

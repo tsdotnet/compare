@@ -6,9 +6,10 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
 const compare_js_1 = tslib_1.__importDefault(require("./compare.js"));
+const Order_js_1 = tslib_1.__importDefault(require("./Order.js"));
 const SortContext_js_1 = tslib_1.__importDefault(require("./SortContext.js"));
 class KeySortedContext extends SortContext_js_1.default {
-    constructor(next, keySelector, order = 1, comparer = compare_js_1.default) {
+    constructor(next, keySelector, order = Order_js_1.default.Ascending, comparer = compare_js_1.default) {
         super(next, comparer, order);
         this._keySelector = keySelector;
     }

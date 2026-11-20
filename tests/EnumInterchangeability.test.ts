@@ -16,15 +16,14 @@ describe('Public Enum Usage and Value Compatibility', () => {
 		});
 
 		it('should work with SortContext constructor via value compatibility', () => {
-			// SortContext expects OrderValue internally, but Order values should work
+			// SortContext takes the public Order enum (or 1 / -1) directly
 			// because they have the same numeric values
 			const comparison = (a: number, b: number) => a - b;
 			
-			// Test with explicit value casting (this is what consumers would do)
-			const context1 = new SortContext(null, comparison, Order.Ascending as any);
+						const context1 = new SortContext(null, comparison, Order.Ascending);
 			expect(context1.order).toBe(1); // Should be the same value
 			
-			const context2 = new SortContext(null, comparison, Order.Descending as any);
+			const context2 = new SortContext(null, comparison, Order.Descending);
 			expect(context2.order).toBe(-1); // Should be the same value
 		});
 
@@ -49,11 +48,10 @@ describe('Public Enum Usage and Value Compatibility', () => {
 			
 			// Consumer code using public Order enum
 			function createNumberSorter(order: Order) {
-				// Internally this requires a cast, but the values are compatible
 				return new SortContext(
 					null, 
 					(a: number, b: number) => a - b,
-					order as any // Value compatibility workaround
+					order
 				);
 			}
 			
@@ -135,19 +133,18 @@ describe('Public Enum Usage and Value Compatibility', () => {
 			expect(equalValue + CompareResult.Greater).toBe(1);
 		});
 
-		it('should show how consumers can work around type restrictions', () => {
-			// If consumers need to pass Order to functions expecting OrderValue,
-			// they can use value-based approaches
+		it('should accept the Order enum and numeric values directly', () => {
+			// Consumers pass the public Order enum or its numeric value
 			
 			function createSortContextFromOrder(order: Order) {
 				const comparison = (a: string, b: string) => a.localeCompare(b);
 				
-				// Method 1: Direct cast (acknowledges the value compatibility)
-				const context1 = new SortContext(null, comparison, order as any);
+				// Method 1: the Order value directly
+				const context1 = new SortContext(null, comparison, order);
 				
 				// Method 2: Convert to number and back
 				const orderValue = order === Order.Ascending ? 1 : -1;
-				const context2 = new SortContext(null, comparison, orderValue as any);
+				const context2 = new SortContext(null, comparison, orderValue);
 				
 				// Both should work identically
 				expect(context1.order).toBe(context2.order);
@@ -171,7 +168,7 @@ describe('Public Enum Usage and Value Compatibility', () => {
 			const sorter = new SortContext(
 				null,
 				(a: string, b: string) => a.localeCompare(b),
-				Order.Ascending as any
+				Order.Ascending
 			);
 			
 			const sortedIndexes = sorter.generateSortedIndexes(items);
@@ -195,7 +192,7 @@ describe('Public Enum Usage and Value Compatibility', () => {
 					? (a: string, b: string) => a.localeCompare(b)
 					: (a: string, b: string) => a.toLowerCase().localeCompare(b.toLowerCase());
 				
-				return new SortContext(null, comparison, order as any);
+				return new SortContext(null, comparison, order);
 			}
 			
 			// 2. Return values should use public enum types  

@@ -1,4 +1,5 @@
 import areEqual from './areEqual.js';
+import CompareResult from './CompareResult.js';
 
 /*!
  * @author electricessence / https://github.com/electricessence/
@@ -6,11 +7,11 @@ import areEqual from './areEqual.js';
  */
 function comparePrimitives(a, b) {
     if (areEqual(a, b))
-        return 0;
+        return CompareResult.Equal;
     if (a > b || a === 0 && b == 0 || a === null && b === undefined)
-        return 1;
+        return CompareResult.Greater;
     if (b > a || b === 0 && a == 0 || b === null && a === undefined)
-        return -1;
+        return CompareResult.Less;
     return NaN;
 }
 (function (comparePrimitives) {

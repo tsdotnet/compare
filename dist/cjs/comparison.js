@@ -12,14 +12,15 @@ exports.from = from;
 exports.invert = invert;
 const tslib_1 = require("tslib");
 const comparePrimitives_js_1 = tslib_1.__importDefault(require("./comparePrimitives.js"));
-function fromSelector(selector, order = 1) {
+const Order_js_1 = tslib_1.__importDefault(require("./Order.js"));
+function fromSelector(selector, order = Order_js_1.default.Ascending) {
     if (order !== -1)
         order = 1;
     return function (a, b) {
         return (0, comparePrimitives_js_1.default)(selector(a), selector(b)) * order;
     };
 }
-function fromKey(key, order = 1) {
+function fromKey(key, order = Order_js_1.default.Ascending) {
     if (order !== -1)
         order = 1;
     return function (a, b) {

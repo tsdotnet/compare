@@ -6,8 +6,8 @@
 import type { Primitive, Selector } from '@tsdotnet/common-interfaces';
 import type { Comparison } from './Comparable.js';
 import comparePrimitives from './comparePrimitives.js';
-import { type CompareResultValue as CompareResult } from './CompareResult.js';
-import { OrderValue as Order } from './Order.js';
+import type CompareResult from './CompareResult.js';
+import Order, { type OrderOrValue } from './Order.js';
 import type { OrderByComparison, OrderByKey, OrderBySelector } from './OrderBy.js';
 
 /**
@@ -18,7 +18,7 @@ import type { OrderByComparison, OrderByKey, OrderBySelector } from './OrderBy.j
  */
 export function fromSelector<T>(
 	selector: Selector<T, Primitive>,
-	order: Order = Order.Ascending): Comparison<T> {
+	order: OrderOrValue = Order.Ascending): Comparison<T> {
 	if (order !== -1) order = 1;
 	return function (a: T, b: T): CompareResult {
 		return comparePrimitives(selector(a), selector(b)) * order!;
@@ -33,7 +33,7 @@ export function fromSelector<T>(
  */
 export function fromKey<T extends object>(
 	key: keyof T,
-	order: Order = Order.Ascending): Comparison<T> {
+	order: OrderOrValue = Order.Ascending): Comparison<T> {
 	if (order !== -1) order = 1;
 	return function (a: T, b: T): CompareResult {
 
@@ -47,8 +47,8 @@ export function fromKey<T extends object>(
  * @return {Comparison<T>}
  */
 export function fromKeys<T extends object>(keys: (keyof T)[]): Comparison<T>;
-export function fromKeys<T extends object>(keys: { [P in keyof T]?: Order }): Comparison<T>;
-export function fromKeys<T extends Record<PropertyKey, unknown>>(keys: (keyof T)[] | { [P in keyof T]?: Order }): Comparison<T> {
+export function fromKeys<T extends object>(keys: { [P in keyof T]?: OrderOrValue }): Comparison<T>;
+export function fromKeys<T extends Record<PropertyKey, unknown>>(keys: (keyof T)[] | { [P in keyof T]?: OrderOrValue }): Comparison<T> {
 	return keys instanceof Array
 		? join(keys.map(k => fromKey(k)))
 		: join(Object.keys(keys).map(k => fromKey(k, keys[k])));

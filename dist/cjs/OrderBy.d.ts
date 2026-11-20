@@ -5,10 +5,10 @@
 
 import type {Primitive, Selector} from '@tsdotnet/common-interfaces';
 import type {Comparison} from './Comparable.js';
-import type {OrderValue as Order} from './Order.js';
+import type { OrderOrValue } from './Order.js';
 
 export type OrderByOption = {
-	order?: Order;
+	order?: OrderOrValue;
 };
 
 export type OrderByComparison<T> = Comparison<T> | OrderByOption & {

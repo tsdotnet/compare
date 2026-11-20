@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import * as comparison from '../src/comparison.js';
-import { OrderValue } from '../src/Order.js';
+import Order from '../src/Order.js';
 import testItems, {TestItem} from './_testItems.js';
 
 describe('comparison', () => {
@@ -19,11 +19,11 @@ describe('comparison', () => {
 		});
 		it('should order by key descending', () => {
 			const items = testItems.slice();
-			items.sort(comparison.fromKey<TestItem>('a', OrderValue.Descending));
+			items.sort(comparison.fromKey<TestItem>('a', Order.Descending));
 			const first = items[0];
 			expect(first).toBeDefined();
 			expect(first?.a).toBe(2);
-			const sorted = items.sort(comparison.fromKeys<TestItem>({a: OrderValue.Descending}));
+			const sorted = items.sort(comparison.fromKeys<TestItem>({a: Order.Descending}));
 			const firstSorted = sorted[0];
 			expect(firstSorted).toBeDefined();
 			expect(firstSorted?.a).toBe(2);
@@ -45,7 +45,7 @@ describe('comparison', () => {
 		});
 		it('should order by keys descending', () => {
 			const items = testItems.slice();
-			items.sort(comparison.fromKeys<TestItem>({a: OrderValue.Descending, b: OrderValue.Descending}));
+			items.sort(comparison.fromKeys<TestItem>({a: Order.Descending, b: Order.Descending}));
 			const first = items[0];
 			expect(first).toBeDefined();
 			expect(first?.a).toBe(2);

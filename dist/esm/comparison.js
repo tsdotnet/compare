@@ -1,17 +1,18 @@
 import comparePrimitives from './comparePrimitives.js';
+import Order from './Order.js';
 
 /*!
  * @author electricessence / https://github.com/electricessence/
  * Licensing: MIT
  */
-function fromSelector(selector, order = 1) {
+function fromSelector(selector, order = Order.Ascending) {
     if (order !== -1)
         order = 1;
     return function (a, b) {
         return comparePrimitives(selector(a), selector(b)) * order;
     };
 }
-function fromKey(key, order = 1) {
+function fromKey(key, order = Order.Ascending) {
     if (order !== -1)
         order = 1;
     return function (a, b) {

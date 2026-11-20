@@ -1,3 +1,5 @@
+import Order from './Order.js';
+
 /*!
  * @author electricessence / https://github.com/electricessence/
  * Licensing: MIT
@@ -6,7 +8,7 @@ class SortContext {
     _next;
     _comparer;
     _order;
-    constructor(_next, _comparer, _order = 1) {
+    constructor(_next, _comparer, _order = Order.Ascending) {
         this._next = _next;
         this._comparer = _comparer;
         this._order = _order;

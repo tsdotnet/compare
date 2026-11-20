@@ -4,11 +4,15 @@
     (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory((global.tsdotnet = global.tsdotnet || {}, global.tsdotnet.compare = global.tsdotnet.compare || {}), global.tsdotnet.type));
 })(this, (function (exports, typeUtil) { 'use strict';
 
+    function _interopDefault (e) { return e && e.__esModule ? e : { default: e }; }
+
+    var typeUtil__default = /*#__PURE__*/_interopDefault(typeUtil);
+
     /*!
      * @author electricessence / https://github.com/electricessence/
      * Licensing: MIT
      */
-    var isTrueNaN$1 = typeUtil.isTrueNaN;
+    var isTrueNaN$1 = typeUtil__default.default.isTrueNaN;
     function areEqual(a, b) {
         return a === b || (isTrueNaN$1(a) && isTrueNaN$1(b));
     }
@@ -17,7 +21,7 @@
      * @author electricessence / https://github.com/electricessence/
      * Licensing: MIT
      */
-    var isTrueNaN = typeUtil.isTrueNaN;
+    var isTrueNaN = typeUtil__default.default.isTrueNaN;
     function areEquivalent(a, b) {
         return a == b || (isTrueNaN(a) && isTrueNaN(b));
     }
@@ -51,13 +55,25 @@
      * @author electricessence / https://github.com/electricessence/
      * Licensing: MIT
      */
+    var CompareResult;
+    (function (CompareResult) {
+        CompareResult[CompareResult["Equal"] = 0] = "Equal";
+        CompareResult[CompareResult["Greater"] = 1] = "Greater";
+        CompareResult[CompareResult["Less"] = -1] = "Less";
+    })(CompareResult || (CompareResult = {}));
+    var CompareResult$1 = CompareResult;
+
+    /*!
+     * @author electricessence / https://github.com/electricessence/
+     * Licensing: MIT
+     */
     function comparePrimitives(a, b) {
         if (areEqual(a, b))
-            return 0;
+            return CompareResult$1.Equal;
         if (a > b || a === 0 && b == 0 || a === null && b === undefined)
-            return 1;
+            return CompareResult$1.Greater;
         if (b > a || b === 0 && a == 0 || b === null && a === undefined)
-            return -1;
+            return CompareResult$1.Less;
         return NaN;
     }
     (function (comparePrimitives) {
@@ -72,14 +88,25 @@
      * @author electricessence / https://github.com/electricessence/
      * Licensing: MIT
      */
-    function fromSelector(selector, order = 1) {
+    var Order;
+    (function (Order) {
+        Order[Order["Ascending"] = 1] = "Ascending";
+        Order[Order["Descending"] = -1] = "Descending";
+    })(Order || (Order = {}));
+    var Order$1 = Order;
+
+    /*!
+     * @author electricessence / https://github.com/electricessence/
+     * Licensing: MIT
+     */
+    function fromSelector(selector, order = Order$1.Ascending) {
         if (order !== -1)
             order = 1;
         return function (a, b) {
             return comparePrimitives$1(selector(a), selector(b)) * order;
         };
     }
-    function fromKey(key, order = 1) {
+    function fromKey(key, order = Order$1.Ascending) {
         if (order !== -1)
             order = 1;
         return function (a, b) {
@@ -145,9 +172,9 @@
      */
     const COMPARE_TO = 'compareTo';
     function compare(a, b) {
-        if (a && typeUtil.hasMember(a, COMPARE_TO))
+        if (a && typeUtil__default.default.hasMember(a, COMPARE_TO))
             return a.compareTo(b);
-        else if (b && typeUtil.hasMember(b, COMPARE_TO))
+        else if (b && typeUtil__default.default.hasMember(b, COMPARE_TO))
             return -b.compareTo(a);
         return comparePrimitives$1(a, b);
     }
@@ -164,23 +191,11 @@
      * @author electricessence / https://github.com/electricessence/
      * Licensing: MIT
      */
-    var CompareResult;
-    (function (CompareResult) {
-        CompareResult[CompareResult["Equal"] = 0] = "Equal";
-        CompareResult[CompareResult["Greater"] = 1] = "Greater";
-        CompareResult[CompareResult["Less"] = -1] = "Less";
-    })(CompareResult || (CompareResult = {}));
-    var CompareResult_default = CompareResult;
-
-    /*!
-     * @author electricessence / https://github.com/electricessence/
-     * Licensing: MIT
-     */
     class SortContext {
         _next;
         _comparer;
         _order;
-        constructor(_next, _comparer, _order = 1) {
+        constructor(_next, _comparer, _order = Order$1.Ascending) {
             this._next = _next;
             this._comparer = _comparer;
             this._order = _order;
@@ -227,7 +242,7 @@
      */
     class KeySortedContext extends SortContext {
         _keySelector;
-        constructor(next, keySelector, order = 1, comparer = compare$1) {
+        constructor(next, keySelector, order = Order$1.Ascending, comparer = compare$1) {
             super(next, comparer, order);
             this._keySelector = keySelector;
         }
@@ -246,17 +261,6 @@
      * @author electricessence / https://github.com/electricessence/
      * Licensing: MIT
      */
-    var Order;
-    (function (Order) {
-        Order[Order["Ascending"] = 1] = "Ascending";
-        Order[Order["Descending"] = -1] = "Descending";
-    })(Order || (Order = {}));
-    var Order_default = Order;
-
-    /*!
-     * @author electricessence / https://github.com/electricessence/
-     * Licensing: MIT
-     */
     var EqualityOperator;
     (function (EqualityOperator) {
         EqualityOperator[EqualityOperator["Equality"] = 0] = "Equality";
@@ -264,11 +268,14 @@
     })(EqualityOperator || (EqualityOperator = {}));
     var EqualityOperator_default = EqualityOperator;
 
-    exports.type = typeUtil;
-    exports.CompareResult = CompareResult_default;
+    Object.defineProperty(exports, "type", {
+        enumerable: true,
+        get: function () { return typeUtil__default.default; }
+    });
+    exports.CompareResult = CompareResult$1;
     exports.EqualityOperator = EqualityOperator_default;
     exports.KeySortedContext = KeySortedContext;
-    exports.Order = Order_default;
+    exports.Order = Order$1;
     exports.SortContext = SortContext;
     exports.areEqual = areEqual;
     exports.areEquivalent = areEquivalent;

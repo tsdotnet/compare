@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import * as comparison from '../src/comparison.js';
-import { OrderValue } from '../src/Order.js';
+import Order from '../src/Order.js';
 
 interface TestItem {
 	a: number;
@@ -60,7 +60,7 @@ describe('comparison extended tests', () => {
 		it('should handle key-based order-by with order', () => {
 			const comp = comparison.from({ 
 				key: 'a', 
-				order: OrderValue.Descending 
+				order: Order.Descending 
 			} as any);
 			const item1 = { a: 1 };
 			const item2 = { a: 2 };
@@ -70,7 +70,7 @@ describe('comparison extended tests', () => {
 		it('should handle selector-based order-by', () => {
 			const comp = comparison.from({ 
 				selector: (item: any) => item.value,
-				order: OrderValue.Ascending 
+				order: Order.Ascending 
 			} as any);
 			const item1 = { value: 2 };
 			const item2 = { value: 1 };
@@ -81,7 +81,7 @@ describe('comparison extended tests', () => {
 			const customComp = (a: any, b: any) => a.value - b.value;
 			const comp = comparison.from({ 
 				comparison: customComp,
-				order: OrderValue.Ascending 
+				order: Order.Ascending 
 			} as any);
 			const item1 = { value: 1 };
 			const item2 = { value: 2 };
@@ -92,7 +92,7 @@ describe('comparison extended tests', () => {
 			const customComp = (a: any, b: any) => a.value - b.value;
 			const comp = comparison.from({ 
 				comparison: customComp,
-				order: OrderValue.Descending 
+				order: Order.Descending 
 			} as any);
 			const item1 = { value: 1 };
 			const item2 = { value: 2 };

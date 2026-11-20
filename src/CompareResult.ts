@@ -4,35 +4,19 @@
  */
 
 /**
- * Const enum for comparison result values providing compile-time optimization.
- * Used internally for performance-critical operations.
- * @readonly
+ * Result of a comparison. One type everywhere: compare() and comparison functions return this enum.
  * @enum {number}
  */
-export const enum CompareResultValue
+enum CompareResult
 {
 	Equal   = 0,
 	Greater = 1,
 	Less    = -1,
 }
 
-// Typically this won't be used by consumers, but it is exported for completeness.
 /**
- * Represents the result of a comparison operation.
- * @enum {number}
+ * The CompareResult enum or its raw numeric values.
  */
-enum CompareResult
-{
-	Equal   = CompareResultValue.Equal,
-	Greater = CompareResultValue.Greater,
-	Less    = CompareResultValue.Less,
-}
-
-/**
- * Union type that accepts both CompareResultValue and CompareResult for maximum flexibility.
- * This allows internal functions to accept either the const enum (for performance)
- * or the regular enum (for public API usage), as well as raw numeric values.
- */
-export type CompareResultOrValue = CompareResultValue | CompareResult | 0 | 1 | -1;
+export type CompareResultOrValue = CompareResult | 0 | 1 | -1;
 
 export default CompareResult;

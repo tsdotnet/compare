@@ -6,7 +6,7 @@
 import type {Selector} from '@tsdotnet/common-interfaces';
 import {Comparable, Comparer, Comparison} from './Comparable.js';
 import compare from './compare.js';
-import { OrderValue as Order } from './Order.js';
+import Order, { type OrderOrValue } from './Order.js';
 import SortContext from './SortContext.js';
 
 /**
@@ -27,7 +27,7 @@ export default class KeySortedContext<T, TKey extends Comparable>
 	constructor (
 		next: Comparer<T> | null,
 		keySelector: Selector<T, TKey> | null,
-		order: Order            = Order.Ascending,
+		order: OrderOrValue     = Order.Ascending,
 		comparer: Comparison<T> = compare
 	)
 	{

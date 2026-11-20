@@ -1,4 +1,5 @@
 import compare from './compare.js';
+import Order from './Order.js';
 import SortContext from './SortContext.js';
 
 /*!
@@ -7,7 +8,7 @@ import SortContext from './SortContext.js';
  */
 class KeySortedContext extends SortContext {
     _keySelector;
-    constructor(next, keySelector, order = 1, comparer = compare) {
+    constructor(next, keySelector, order = Order.Ascending, comparer = compare) {
         super(next, comparer, order);
         this._keySelector = keySelector;
     }

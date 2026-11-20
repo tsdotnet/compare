@@ -5,7 +5,7 @@
 import type { Primitive } from '@tsdotnet/common-interfaces';
 import { type ComparableObject } from './Comparable.js';
 import comparePrimitives from './comparePrimitives.js';
-import { type CompareResultValue as CompareResult } from './CompareResult.js';
+import type CompareResult from './CompareResult.js';
 declare function compare<T>(a: ComparableObject<T>, b: T): number;
 declare function compare<T>(a: T, b: ComparableObject<T>): number;
 declare function compare<T extends Primitive>(a: T, b: T): CompareResult;

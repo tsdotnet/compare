@@ -4,8 +4,10 @@
  * Licensing: MIT
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+const tslib_1 = require("tslib");
+const Order_js_1 = tslib_1.__importDefault(require("./Order.js"));
 class SortContext {
-    constructor(_next, _comparer, _order = 1) {
+    constructor(_next, _comparer, _order = Order_js_1.default.Ascending) {
         this._next = _next;
         this._comparer = _comparer;
         this._order = _order;
